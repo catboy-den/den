@@ -30,26 +30,3 @@ resource "kubernetes_secret" "github-info" {
 
   type = "Opaque"
 }
-
-# Create cluster-info secret
-resource "kubernetes_secret" "cluster-info" {
-  depends_on = [
-    helm_release.kubed
-  ]
-
-  metadata {
-    name      = "cluster-info"
-    namespace = "kube-system"
-    annotations = {
-      "kubed.appscode.com/sync" : "true"
-    }
-  }
-
-  data = {
-    primary_namespace = var.cluster_primary_namespace
-    domain            = var.cluster_domain
-    email             = var.cluster_email
-  }
-
-  type = "Opaque"
-}

@@ -1,21 +1,3 @@
-variable "cluster_primary_namespace" {
-  type        = string
-  default     = "catboy-den"
-  description = "Primary namespace the cluster will use fairly frequently"
-}
-
-variable "cluster_domain" {
-  type        = string
-  default     = "catboy.rest"
-  description = "Common domain used by the cluster"
-}
-
-variable "cluster_email" {
-  type        = string
-  default     = "thetwinkehh@gmail.com"
-  description = "Common email the cluster can use for general configs"
-}
-
 variable "flux_target_path" {
   type        = string
   default     = "cluster"

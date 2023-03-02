@@ -35,7 +35,7 @@ spec:
       enabled: true
 
     config:
-      issuer: "http://dex.${domain}"
+      issuer: http://dex.catboy.rest
       storage:
         type: memory
       connectors:
@@ -43,7 +43,7 @@ spec:
           id: github
           name: GitHub
           config:
-            redirectURI: http://dex.${domain}/callback
+            redirectURI: http://dex.catboy.rest/callback
             loadAllGroups: false
             useLoginAsID: false
 
@@ -51,12 +51,12 @@ spec:
     - kind: Secret
       name: github-info
       valuesKey: client_id
-      targetPath: config.clientID
+      targetPath: config.connectors.config.clientID
     - kind: Secret
       name: github-info
       valuesKey: client_secret
-      targetPath: config.connectors[0].config.clientSecret
+      targetPath: config.connectors.config.clientSecret
     - kind: Secret
       name: github-info
       valuesKey: organization
-      targetPath: config.connectors[0].config.orgs[0].name
+      targetPath: config.connectors.config.orgs.name

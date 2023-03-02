@@ -29,28 +29,6 @@ spec:
         name: dex
         namespace: dex
       interval: 12h
-
-  values:
-    serviceMonitor:
-      enabled: true
-
-    config:
-      issuer: http://dex.catboy.rest
-      storage:
-        type: memory
-      connectors:
-        - type: github
-          id: github
-          name: GitHub
-          config:
-            redirectURI: http://dex.catboy.rest/callback
-            loadAllGroups: false
-            useLoginAsID: false
-            clientID:
-            clientSecret:
-            orgs:
-              - name:
-
   valuesFrom:
     - kind: Secret
       name: github-info

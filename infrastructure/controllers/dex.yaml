@@ -42,3 +42,19 @@ spec:
       name: github-info
       valuesKey: organization
       targetPath: config.connectors[0].config.orgs[0].name
+  values:
+    serviceMonitor:
+      enabled: true
+
+    config:
+      issuer: http://dex.catboy.rest
+      storage:
+        type: memory
+      connectors:
+        - type: github
+          id: github
+          name: GitHub
+          config:
+            redirectURI: http://dex.catboy.rest/callback
+            loadAllGroups: false
+            useLoginAsID: false

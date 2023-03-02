@@ -51,7 +51,7 @@ spec:
     - kind: Secret
       name: github-info
       valuesKey: client_id
-      targetPath: config.connectors[0].config.clientID
+      targetPath: config.clientID
     - kind: Secret
       name: github-info
       valuesKey: client_secret

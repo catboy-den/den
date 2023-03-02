@@ -16,6 +16,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: dex-flux-values
+  namespace: dex
 data:
   values:
     serviceMonitor:

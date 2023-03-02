@@ -46,17 +46,21 @@ spec:
             redirectURI: http://dex.catboy.rest/callback
             loadAllGroups: false
             useLoginAsID: false
+            clientID:
+            clientSecret:
+            orgs:
+              - name:
 
   valuesFrom:
     - kind: Secret
       name: github-info
       valuesKey: client_id
-      targetPath: config.connectors[0].config[0].clientID
+      targetPath: config.connectors[0].config.clientID
     - kind: Secret
       name: github-info
       valuesKey: client_secret
-      targetPath: config.connectors[0].config[0].clientSecret
+      targetPath: config.connectors[0].config.clientSecret
     - kind: Secret
       name: github-info
       valuesKey: organization
-      targetPath: config.connectors[0].config[0].orgs[0].name
+      targetPath: config.connectors[0].config.orgs[0].name

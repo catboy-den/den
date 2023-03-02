@@ -51,12 +51,12 @@ spec:
     - kind: Secret
       name: github-info
       valuesKey: client_id
-      targetPath: config.connectors.config[0].clientID
+      targetPath: config.connectors[0].config[0].clientID
     - kind: Secret
       name: github-info
       valuesKey: client_secret
-      targetPath: config.connectors.config[0].clientSecret
+      targetPath: config.connectors[0].config[0].clientSecret
     - kind: Secret
       name: github-info
       valuesKey: organization
-      targetPath: config.connectors.config[0].orgs[0].name
+      targetPath: config.connectors[0].config[0].orgs[0].name

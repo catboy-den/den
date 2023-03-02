@@ -18,7 +18,7 @@ metadata:
   name: dex-flux-values
   namespace: dex
 data:
-  values:
+  values: |
     serviceMonitor:
       enabled: true
     config:

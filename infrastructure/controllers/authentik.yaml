@@ -20,11 +20,20 @@ metadata:
 data:
   values: |
     authentik:
-      secret_key: "PleaseGenerateA50CharKey"
-      error_reporting:
-          enabled: true
-      postgresql:
-        password: "OpUGgHzXa3"
+        secret_key: "PleaseGenerateA50CharKey"
+        error_reporting:
+            enabled: true
+        postgresql:
+            password: "ThisIsNotASecurePassword"
+
+    ingress:
+        enabled: true
+        hosts:
+            - host: authentik.catboy.rest
+              paths:
+                  - path: "/"
+                    pathType: Prefix
+
     postgresql:
         enabled: true
         postgresqlPassword: "ThisIsNotASecurePassword"

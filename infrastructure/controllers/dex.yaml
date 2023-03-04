@@ -42,6 +42,7 @@ data:
         - host: dex.catboy.rest
           paths:
             - path: /
+              pathType: ImplementationSpecific
       tls:
         - hosts:
             - dex.catboy.rest

@@ -24,12 +24,10 @@ data:
       className: nginx
       annotations:
         cert-manager.io/cluster-issuer: letsencrypt
-
       hosts:
         - host: dex.catboy.rest
           paths:
             - path: /
-
       tls:
         - hosts:
             - dex.catboy.rest

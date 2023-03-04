@@ -24,7 +24,7 @@ data:
       error_reporting:
           enabled: true
       postgresql:
-        password: "ThisIsNotASecurePassword"
+        password: "OpUGgHzXa3"
     postgresql:
         enabled: true
         postgresqlPassword: "ThisIsNotASecurePassword"

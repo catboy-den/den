@@ -23,8 +23,11 @@ data:
       secret_key: "PleaseGenerateA50CharKey"
       error_reporting:
           enabled: true
+      postgresql:
+        password: "ThisIsNotASecurePassword"
     postgresql:
         enabled: true
+        postgresqlPassword: "ThisIsNotASecurePassword"
     redis:
         enabled: true
 ---

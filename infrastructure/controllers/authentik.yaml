@@ -10,7 +10,8 @@ metadata:
   namespace: authentik
   annotations:
     secret-generator.v1.mittwald.de/type: string
-    secret-generator.v1.mittwald.de/autogenerate: secret-key, postgres-pw
+    secret-generator.v1.mittwald.de/length: 20
+    secret-generator.v1.mittwald.de/autogenerate: secret-key,postgres-pw
 data:
 ---
 apiVersion: source.toolkit.fluxcd.io/v1beta2

@@ -19,6 +19,8 @@ metadata:
   namespace: dex
 data:
   values: |
+    https:
+      enabled: true
     serviceMonitor:
       enabled: true
     config:
@@ -35,6 +37,7 @@ data:
           useLoginAsID: false
     ingress:
       enabled: true
+      className: nginx
       annotations:
         cert-manager.io/cluster-issuer: letsencrypt
       hosts:

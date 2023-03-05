@@ -35,14 +35,13 @@ data:
           useLoginAsID: false
     ingress:
       enabled: true
-      className: nginx
+      className: traefik
       annotations:
         cert-manager.io/cluster-issuer: letsencrypt
       hosts:
         - host: dex.catboy.rest
           paths:
             - path: /
-              pathType: ImplementationSpecific
       tls:
         - hosts:
             - dex.catboy.rest

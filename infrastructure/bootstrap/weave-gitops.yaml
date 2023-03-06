@@ -21,9 +21,9 @@ metadata:
   name: oidc-auth
   namespace: flux-system
 type: Opaque
-data:
-  issuerURL: "https://dex.catboy.rest"
-  redirectURL: "https://weave.catboy.rest/oauth2/callback"
+stringData:
+  issuerURL: https://dex.catboy.rest
+  redirectURL: https://weave.catboy.rest/oauth2/callback
 ---
 apiVersion: v1
 kind: ConfigMap

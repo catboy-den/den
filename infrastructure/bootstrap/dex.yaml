@@ -27,6 +27,8 @@ data:
         type: kubernetes
         config:
           inCluster: true
+      oauth2:
+        skipApprovalScreen: true
       connectors:
       - type: github
         id: github

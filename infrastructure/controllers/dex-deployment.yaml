@@ -3,6 +3,24 @@ kind: Namespace
 metadata:
   name: dex
 ---
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: dex-selfsigned-ca
+  namespace: sandbox
+spec:
+  isCA: true
+  commonName: dex-selfsigned-ca
+  secretName: dex.catboy.rest.tls
+  dnsNames:
+  - dex.catboy.rest
+  privateKey:
+    algorithm: ECDSA
+    size: 256
+  issuerRef:
+    name: selfsigned-issuer
+    kind: ClusterIssuer
+---
 kind: ConfigMap
 apiVersion: v1
 metadata:

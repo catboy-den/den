@@ -32,6 +32,8 @@ metadata:
   namespace: flux-system
 data:
   values: |
+    metrics:
+      enabled: true
     ingress:
       enabled: true
       annotations:
@@ -62,5 +64,10 @@ spec:
       sourceRef:
         kind: HelmRepository
         name: weave-gitops
+  valuesFrom:
+  - kind: ConfigMap
+    name: weave-gitops-flux-values
+    valuesKey: values
+    optional: false
   interval: 1h0m0s
 

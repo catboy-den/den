@@ -26,6 +26,9 @@ spec:
         kind: HelmRepository
         name: traefik
         namespace: traefik
+    install:
+      remediation:
+        retries: 2
   interval: 15m
   timeout: 5m
   releaseName: traefik

@@ -75,3 +75,16 @@ spec:
     valuesKey: values
     optional: false
   interval: 1h
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: catboy-den
+subjects:
+- kind: Group
+  name: catboy-den
+  apiGroup: rbac.authorization.k8s.io
+roleRef:
+  kind: ClusterRole
+  name: weave-gitops
+  apiGroup: rbac.authorization.k8s.io

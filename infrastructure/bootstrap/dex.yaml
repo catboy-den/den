@@ -23,10 +23,10 @@ data:
       enabled: true
     config:
       issuer: https://dex.catboy.rest
-    storage:
-      type: kubernetes
-      config:
-        inCluster: true
+      storage:
+        type: kubernetes
+        config:
+          inCluster: true
       connectors:
       - type: github
         id: github

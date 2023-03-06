@@ -12,8 +12,6 @@ spec:
   secretName: dex.catboy.rest.tls
   dnsNames:
   - "dex.catboy.rest"
-  issuerRef:
-    name: letsencrypt
 ---
 kind: ConfigMap
 apiVersion: v1
@@ -52,7 +50,7 @@ metadata:
   name: dex
   namespace: dex
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
       app: dex

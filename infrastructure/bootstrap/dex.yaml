@@ -40,11 +40,13 @@ data:
       className: traefik
       annotations:
         cert-manager.io/cluster-issuer: letsencrypt-issuer
+        traefik.ingress.kubernetes.io/router.entrypoints: websecure
+        traefik.ingress.kubernetes.io/router.tls: "true"
       hosts:
         - host: dex.catboy.rest
           paths:
             - path: /
-              pathType: Prefix
+              pathType: ImplementationSpecific
       tls:
         - hosts:
             - dex.catboy.rest

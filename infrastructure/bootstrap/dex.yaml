@@ -1,0 +1,85 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: dex
+---
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+kind: HelmRepository
+metadata:
+  name: dex
+  namespace: dex
+spec:
+  interval: 24h
+  url: https://charts.dexidp.io
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: dex-flux-values
+  namespace: dex
+data:
+  values: |
+    serviceMonitor:
+      enabled: true
+    config:
+      issuer: https://dex.catboy.rest
+    storage:
+      type: kubernetes
+      config:
+        inCluster: true
+      connectors:
+      - type: github
+        id: github
+        name: GitHub
+        config:
+          redirectURI: https://dex.catboy.rest/callback
+          loadAllGroups: false
+          useLoginAsID: false
+    ingress:
+      enabled: true
+      className: traefik
+      annotations:
+        cert-manager.io/cluster-issuer: letsencrypt-issuer
+      hosts:
+        - host: dex.catboy.rest
+          paths:
+            - path: /
+              pathType: Prefix
+      tls:
+        - hosts:
+            - dex.catboy.rest
+          secretName: dex-cert
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: dex
+  namespace: dex
+spec:
+  interval: 30m
+  chart:
+    spec:
+      chart: dex
+      version: "0.x"
+      sourceRef:
+        kind: HelmRepository
+        name: dex
+        namespace: dex
+      interval: 12h
+
+  valuesFrom:
+  - kind: ConfigMap
+    name: dex-flux-values
+    valuesKey: values
+  - kind: Secret
+    name: github-info
+    valuesKey: client_id
+    targetPath: config.connectors[0].config.clientID
+  - kind: Secret
+    name: github-info
+    valuesKey: client_secret
+    targetPath: config.connectors[0].config.clientSecret
+  - kind: Secret
+    name: github-info
+    valuesKey: organization
+    targetPath: config.connectors[0].config.orgs[0].name

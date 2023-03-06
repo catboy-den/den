@@ -88,12 +88,12 @@ spec:
           valueFrom:
             secretKeyRef:
               name: github-info
-              key: client-id
+              key: client_id
         - name: GITHUB_CLIENT_SECRET
           valueFrom:
             secretKeyRef:
               name: github-info
-              key: client-secret
+              key: client_secret
         - name: GITHUB_ORGANIZATION
           valueFrom:
             secretKeyRef:

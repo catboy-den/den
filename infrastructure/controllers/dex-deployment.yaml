@@ -11,7 +11,14 @@ metadata:
 spec:
   secretName: dex.catboy.rest.tls
   dnsNames:
-  - "dex.catboy.rest"
+  - dex.catboy.rest
+  issuerRef:
+    name: letsencrypt
+  acme:
+    config:
+    - http01:
+      domains:
+      - dex.catboy.rest
 ---
 kind: ConfigMap
 apiVersion: v1

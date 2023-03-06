@@ -3,6 +3,19 @@ kind: Namespace
 metadata:
   name: dex
 ---
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: dex.catboy.rest.tls
+  namespace: dex
+spec:
+  secretName: dex.catboy.rest.tls
+  dnsNames:
+  - dex.catboy.rest
+  issuerRef:
+    name: letsencrypt
+    kind: ClusterIssuer
+---
 kind: ConfigMap
 apiVersion: v1
 metadata:

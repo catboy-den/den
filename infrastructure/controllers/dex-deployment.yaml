@@ -14,11 +14,7 @@ spec:
   - dex.catboy.rest
   issuerRef:
     name: letsencrypt
-  acme:
-    config:
-    - http01:
-      domains:
-      - dex.catboy.rest
+    kind: ClusterIssuer
 ---
 kind: ConfigMap
 apiVersion: v1

@@ -22,7 +22,7 @@ metadata:
   namespace: flux-system
 type: Opaque
 stringData:
-  clientId: weave-gitops
+  clientID: weave-gitops
   clientSecret: weave-gitops-secret
   issuerURL: https://dex.catboy.rest
   redirectURL: https://weave.catboy.rest/oauth2/callback

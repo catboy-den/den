@@ -11,3 +11,24 @@ metadata:
 spec:
   interval: 15m
   url: https://traefik.github.io/charts
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: traefik
+  namespace: traefik
+spec:
+  chart:
+    spec:
+      chart: traefik
+      version: "2x.x"
+      sourceRef:
+        kind: HelmRepository
+        name: traefik
+        namespace: traefik
+  install:
+    remediation:
+      retries: 2
+  interval: 15m
+  timeout: 5m
+  releaseName: traefik

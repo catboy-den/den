@@ -34,6 +34,7 @@ data:
         config:
           redirectURI: https://dex.catboy.rest/callback
           loadAllGroups: false
+          teamNameField: slug
           useLoginAsID: false
       staticClients:
       - id: weave-gitops

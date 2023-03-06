@@ -96,7 +96,7 @@ metadata:
   name: catboy-den-role
 subjects:
 - kind: Group
-  name: catboy-den
+  name: catboy-den:cluster
   apiGroup: rbac.authorization.k8s.io
 roleRef:
   kind: ClusterRole

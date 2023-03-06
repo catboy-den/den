@@ -49,3 +49,27 @@ data:
         - hosts:
             - weave.catboy.rest
           secretName: weave-gitops-cert
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  annotations:
+    metadata.weave.works/description: This is the Weave GitOps Dashboard.  It provides a simple way to get insights into your GitOps workloads.
+  name: weave-gitops
+  namespace: flux-system
+spec:
+  chart:
+    spec:
+      chart: weave-gitops
+      sourceRef:
+        kind: HelmRepository
+        name: weave-gitops
+  values:
+    additionalArgs:
+    - --auth-methods=oidc
+  valuesFrom:
+  - kind: ConfigMap
+    name: weave-gitops-flux-values
+    valuesKey: values
+    optional: false
+  interval: 1h

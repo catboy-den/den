@@ -37,7 +37,6 @@ data:
           useLoginAsID: false
     ingress:
       enabled: true
-      className: traefik
       annotations:
         cert-manager.io/cluster-issuer: letsencrypt-issuer
         traefik.ingress.kubernetes.io/router.entrypoints: websecure
@@ -46,7 +45,7 @@ data:
         - host: dex.catboy.rest
           paths:
             - path: /
-              pathType: ImplementationSpecific
+              pathType: Prefix
       tls:
         - hosts:
             - dex.catboy.rest

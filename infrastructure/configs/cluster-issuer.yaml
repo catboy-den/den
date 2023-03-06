@@ -1,3 +1,12 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: cloudflare-api-token
+  namespace: kube-system
+type: Opaque
+stringData:
+  api-key: 26J6wLM-NYQaH6Glp1CWvrseZwEqeeTY65BJMogA
+---
 apiVersion: cert-manager.io/v1
 kind: ClusterIssuer
 metadata:
@@ -12,3 +21,9 @@ spec:
     - http01:
         ingress:
           class: nginx
+    - dns01:
+        cloudflare:
+          email: thetwinkehh@gmail.com
+          apiKeySecretRef:
+            name: cloudflare-api-key
+            key: api-key

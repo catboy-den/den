@@ -37,10 +37,10 @@ data:
           useLoginAsID: false
       staticClients:
       - id: weave-gitops
-      redirectURIs:
-      - 'https://weave.catboy.rest/oauth2/callback'
-      name: 'Weave Gitops'
-      secret: weave-gitops-secret
+        redirectURIs:
+          - 'https://weave.catboy.rest/oauth2/callback'
+        name: 'Weave Gitops'
+        secret: weave-gitops-secret
     ingress:
       enabled: true
       annotations:

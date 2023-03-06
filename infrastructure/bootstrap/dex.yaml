@@ -66,20 +66,23 @@ spec:
         name: dex
         namespace: dex
       interval: 12h
-
   valuesFrom:
   - kind: ConfigMap
     name: dex-flux-values
     valuesKey: values
+    optional: false
   - kind: Secret
     name: github-info
     valuesKey: client_id
     targetPath: config.connectors[0].config.clientID
+    optional: false
   - kind: Secret
     name: github-info
     valuesKey: client_secret
     targetPath: config.connectors[0].config.clientSecret
+    optional: false
   - kind: Secret
     name: github-info
     valuesKey: organization
     targetPath: config.connectors[0].config.orgs[0].name
+    optional: false

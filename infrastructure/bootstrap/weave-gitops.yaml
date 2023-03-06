@@ -11,7 +11,7 @@ metadata:
   name: weave-gitops
   namespace: flux-system
 spec:
-  interval: 1h0m0s
+  interval: 1h
   type: oci
   url: oci://ghcr.io/weaveworks/charts
 ---
@@ -22,6 +22,8 @@ metadata:
   namespace: flux-system
 type: Opaque
 stringData:
+  client-id: weave-gitops
+  client-secret: weave-gitops-secret
   issuerURL: https://dex.catboy.rest
   redirectURL: https://weave.catboy.rest/oauth2/callback
 ---

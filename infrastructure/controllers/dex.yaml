@@ -19,14 +19,14 @@ metadata:
   namespace: dex
 data:
   values: |
-    https:
-      enabled: true
     serviceMonitor:
       enabled: true
     config:
       issuer: https://dex.catboy.rest
-      storage:
-        type: memory
+    storage:
+      type: kubernetes
+      config:
+        inCluster: true
       connectors:
       - type: github
         id: github

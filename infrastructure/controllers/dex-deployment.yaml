@@ -69,7 +69,7 @@ spec:
     spec:
       serviceAccountName: dex
       containers:
-      - image: ghcr.io/dexidp/dex:v2.30.0
+      - image: ghcr.io/dexidp/dex:v2.35.3
         name: dex
         command: ["/usr/local/bin/dex", "serve", "/etc/dex/cfg/config.yaml"]
 

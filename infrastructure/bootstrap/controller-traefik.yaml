@@ -21,7 +21,7 @@ spec:
   chart:
     spec:
       chart: traefik
-      version: "2x.x"
+      version: "v2x.x"
       sourceRef:
         kind: HelmRepository
         name: traefik

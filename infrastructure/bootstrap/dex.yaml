@@ -35,6 +35,7 @@ data:
           redirectURI: https://dex.catboy.rest/callback
           loadAllGroups: false
           useLoginAsID: false
+      staticClients:
       - id: weave-gitops
       redirectURIs:
       - 'https://weave.catboy.rest/oauth2/callback'

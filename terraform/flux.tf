@@ -111,3 +111,15 @@ resource "github_repository_file" "kustomize" {
   branch              = var.flux_repository_branch
   overwrite_on_create = true
 }
+
+resource "github_team" "admin_team" {
+  name        = "cluster-admin"
+  description = "Administration team for this organizations flux cluster"
+  privacy     = "closed"
+}
+
+resource "github_team" "user_team" {
+  name        = "cluster-user"
+  description = "User or read-only team for this organizations flux cluster"
+  privacy     = "closed"
+}

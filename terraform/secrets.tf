@@ -22,10 +22,9 @@ resource "kubernetes_secret" "github-info" {
   }
 
   data = {
-    organization          = var.github_organization
-    client_id             = var.github_oauth_client_id
-    client_secret         = var.github_oauth_client_secret
-    personal_access_token = var.github_personal_access_token
+    client_id               = var.github_oauth_client_id
+    client_secret           = var.github_oauth_client_secret
+    organization            = var.github_organization
   }
 
   type = "Opaque"

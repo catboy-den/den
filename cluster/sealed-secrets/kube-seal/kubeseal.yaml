@@ -1,7 +1,7 @@
 apiVersion: source.toolkit.fluxcd.io/v1beta2
 kind: HelmRepository
 metadata:
-  name: kube-seal
+  name: kube-seal-repo
   namespace: kube-system
 spec:
   interval: 24h
@@ -10,7 +10,7 @@ spec:
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
-  name: kube-seal
+  name: kube-seal-release
   namespace: kube-system
 spec:
   interval: 30m
@@ -20,9 +20,9 @@ spec:
       version: "1.x"
       sourceRef:
         kind: HelmRepository
-        name: kube-seal
+        name: kube-seal-repo
         namespace: kube-seal
       interval: 12h
   values:
-    metrics.serviceMonitor.enabled: true
-    # metrics.serviceMonitor.namespace: "" # TODO
+# metrics.serviceMonitor.enabled: true TODO
+# metrics.serviceMonitor.namespace: "" # TODO

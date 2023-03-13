@@ -1,6 +1,6 @@
 variable "flux_target_path" {
   type        = string
-  default     = "cluster"
+  default     = "flux"
   description = "Relative path to the Git repository root where Flux manifests are committed."
 }
 

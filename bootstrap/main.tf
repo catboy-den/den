@@ -5,9 +5,6 @@ terraform {
   }
 
   required_providers {
-    helm = {
-      version = ">=2.9.0"
-    }
     github = {
       source  = "integrations/github"
       version = ">= 4.5.2"
@@ -28,12 +25,6 @@ terraform {
       source  = "hashicorp/tls"
       version = "3.1.0"
     }
-  }
-}
-
-provider "helm" {
-  kubernetes {
-    config_path = "~/.kube/config"
   }
 }
 

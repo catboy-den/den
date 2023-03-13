@@ -24,6 +24,4 @@ variable "github_organization" {
   default = "catboy-den"
 }
 
-variable "github_oauth_client_id" {}
-variable "github_oauth_client_secret" {}
 variable "github_personal_access_token" {}

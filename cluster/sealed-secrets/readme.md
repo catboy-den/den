@@ -1,0 +1,1 @@
+Sealed secrets directory, intended for any external secrets

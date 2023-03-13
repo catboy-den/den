@@ -10,6 +10,6 @@ spec:
   sourceRef:
     kind: GitRepository
     name: flux-system
-  path: ./cluster/sealed-secrets/kube-seal
+  path: ./cluster/kube-sealed-secrets/sealed-secrets
   prune: true # remove any elements later removed from the above path
   wait: true

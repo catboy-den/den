@@ -1,1 +1,1 @@
-Sealed secrets directory, intended for any external secrets
+Example: `cat github-oauth.yaml | kubeseal --format yaml > github-oauth-sealed.yaml`

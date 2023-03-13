@@ -21,7 +21,7 @@ spec:
       sourceRef:
         kind: HelmRepository
         name: kube-seal-repo
-        namespace: kube-seal
+        namespace: kube-system
       interval: 12h
   values:
 # metrics.serviceMonitor.enabled: true TODO

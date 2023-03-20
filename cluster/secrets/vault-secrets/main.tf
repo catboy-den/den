@@ -1,3 +1,3 @@
-output "vault-config" {
-  value = vault-config.namespace
+output "vault_namespace" {
+  value = var.vault_namespace
 }

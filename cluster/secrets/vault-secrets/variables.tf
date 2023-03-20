@@ -1,5 +1,3 @@
-variable "vault-config" {
-  type = object({
-    namespace = string
-  })
+variable "vault_namespace" {
+  type    = string
 }

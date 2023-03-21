@@ -12,8 +12,8 @@ terraform {
   }
 }
 
-output "vault_token_value" {
-  value = lookup(env, "VAULT_TOKEN")
+output "vault_namespace" {
+  value = var.vault_namespace
 }
 
 /* 

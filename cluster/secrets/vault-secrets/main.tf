@@ -19,7 +19,7 @@ provider "vault" {
 resource "vault_generic_secret" "example_secret" {
   path = "secret/example"
   data_json = jsonencode({
-    username = "myuser-new"
+    username = "myuser--evenasdsadasds"
     password = "mypassword"
   })
 }

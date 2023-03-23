@@ -13,9 +13,11 @@ terraform {
 }
 
 provider "vault" {
-  address   = "https://vault:8200"
-  token     = var.vault-root
-} 
+  address = "https://vault:8200"
+  token   = var.vault-root
+  ca_cert = var.vault_ca_cert
+  ca_path = var.vault_ca_key
+}
 
 resource "vault_generic_secret" "example_secret" {
   path = "secret/example"

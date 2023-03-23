@@ -19,13 +19,14 @@ terraform {
 data "environment_variable" "vault_token" {
   name = "VAULT_TOKEN"
 }
-output "VAULT_TOKEN" {
+output "vault_token" {
   value = data.environment_variable.vault_token.value
   sensitive = true
 }
+
 provider "vault" {
   address = "https://vault:8200"
-  token   = data.env_variable.vault_token.value
+  token   = data.environment_variable.vault_token.value
 }
 
 resource "vault_generic_secret" "example_secret" {

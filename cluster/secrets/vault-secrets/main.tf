@@ -9,19 +9,24 @@ terraform {
       source  = "hashicorp/kubernetes"
       version = ">= 2.4.1"
     }
-    environment = {
-      source = "EppO/environment"
-      version = ">= 1.3.4"
+    env = {
+      source = "tchupp/env"
+      version = "0.0.2"
     }
   }
 }
 
-data "environment_variables" "vault_token" {
-  filter    = "VAULT_TOKEN"
+data "env_variable" "vault_token" {
+  name  = "VAULT_TOKEN"
 }
 
 output "vault_token" {
-  value = data.environment_variables.vault_token.items
+  value = data.env_variable.vault_token.value
+}
+
+provider "vault" {
+  address = "https://vault:8200"
+  token   = data.env_variable.vault_token.value
 }
 
 /* 

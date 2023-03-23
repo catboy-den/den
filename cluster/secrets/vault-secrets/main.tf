@@ -12,8 +12,8 @@ terraform {
   }
 }
 
-output "vault_namespace" {
-  value = var.vault_namespace
+output "vault_token" {
+  value = var.vault_token
 }
 
 /* 

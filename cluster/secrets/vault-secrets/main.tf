@@ -9,20 +9,22 @@ terraform {
       source  = "hashicorp/kubernetes"
       version = ">= 2.4.1"
     }
-    environment = {
-      source = "MorganPeat/environment"
-      version = ">= 0.1.4"
+    env = {
+      source = "tchupp/env"
+      version = "0.0.2"
     }
   }
 }
 
-data "environment_variable" "vault_token" {
-  name = "VAULT_TOKEN"
+data "env_variable" "vault_token" {
+  name  = "VAULT_TOKEN"
 }
-output "VAULT_TOKEN" {
-  value = data.environment_variable.vault_token.value
+
+output "vault_token" {
+  value = data.env_variable.vault_token.value
   sensitive = true
 }
+
 provider "vault" {
   address = "https://vault:8200"
   token   = data.env_variable.vault_token.value

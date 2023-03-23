@@ -12,8 +12,12 @@ terraform {
   }
 }
 
+variable "vault-root" {
+  type = string
+}
+
 output "all_variables" {
-  value = var
+  value = var.vault-root
   sensitive = true
 }
 

@@ -9,36 +9,12 @@ terraform {
       source  = "hashicorp/kubernetes"
       version = ">= 2.4.1"
     }
-    environment = {
-      source = "MorganPeat/environment"
-      version = ">= 0.1.4"
-    }
   }
 }
 
-data "environment_variable" "vault_token" {
-  name = "VAULT_TOKEN"
-}
-output "vault_token" {
-  value = data.environment_variable.vault_token.value
+output "all_variables" {
+  value = var
   sensitive = true
-}
-
-provider "vault" {
-  address = "https://vault:8200"
-  token   = data.environment_variable.vault_token.value
-}
-
-resource "vault_generic_secret" "example_secret" {
-  path = "secret/example"
-  data = {
-    username = "myuser"
-    password = "mypassword"
-  }
-}
-
-output "example_secret" {
-  value = vault_generic_secret.example_secret.data
 }
 
 /* 

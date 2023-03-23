@@ -14,12 +14,13 @@ terraform {
 
 provider "vault" {
   address = "https://vault:8200"
+  token   = var.vault-root
 }
 
 resource "vault_generic_secret" "example_secret" {
   path = "secret/example"
   data_json = jsonencode({
-    username = "myuser--evenasdsadasds"
+    username = "myuser-asdsadasdsad"
     password = "mypassword"
   })
 }

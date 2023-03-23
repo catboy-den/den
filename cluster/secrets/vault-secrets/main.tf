@@ -12,18 +12,16 @@ terraform {
   }
 }
 
-variable "vault-root" {
-  type = string
-}
-
-output "all_variables" {
-  value = var.vault-root
-  sensitive = true
-}
-
-/* 
 provider "vault" {
-  address   = local.vault_addr
-  token     = local.vault_token
-  namespace = local.vault_namespace
-} */
+  address   = "https://vault:8200 "
+  token     = var.vault-root
+  namespace = "vault"
+} 
+
+resource "vault_generic_secret" "example_secret" {
+  path = "secret/example"
+  data = {
+    username = "myuser"
+    password = "mypassword"
+  }
+}

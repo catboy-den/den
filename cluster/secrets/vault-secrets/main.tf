@@ -18,13 +18,10 @@ provider "vault" {
   namespace = "vault"
 } 
 
-resource "vault_generic_secret" "example" {
+resource "vault_generic_secret" "example_secret" {
   path = "secret/example"
-
-  data_json = <<EOT
-{
-  "foo":   "bar",
-  "pizza": "cheese"
-}
-EOT
+  data_json = jsonencode({
+    username = "myuser-new"
+    password = "mypassword"
+  })
 }

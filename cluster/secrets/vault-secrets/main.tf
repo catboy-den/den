@@ -18,10 +18,13 @@ provider "vault" {
   namespace = "vault"
 } 
 
-resource "vault_generic_secret" "example_secret" {
+resource "vault_generic_secret" "example" {
   path = "secret/example"
-  data = {
-    username = "myuser"
-    password = "mypassword"
-  }
+
+  data_json = <<EOT
+{
+  "foo":   "bar",
+  "pizza": "cheese"
+}
+EOT
 }

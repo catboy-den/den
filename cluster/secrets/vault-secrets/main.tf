@@ -13,9 +13,8 @@ terraform {
 }
 
 provider "vault" {
-  address   = "https://vault:8200 "
+  address   = "https://vault:8200"
   token     = var.vault-root
-  namespace = "vault"
 } 
 
 resource "vault_generic_secret" "example_secret" {

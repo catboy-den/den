@@ -4,7 +4,7 @@ metadata:
   name: dex
 ---
 apiVersion: v1
-kind: ConfigMap
+kind: Secret
 metadata:
   name: dex-static-clients
   namespace: dex
@@ -13,8 +13,9 @@ metadata:
     vault.security.banzaicloud.io/vault-role: "default"
     vault.security.banzaicloud.io/vault-tls-secret: vault-tls
 data:
-  staticClients:
-  - id: weave-gitops
-    redirectURIs:
-    - 'https://weave.catboy.rest/oauth2/callback'
-    name: 'Weave Gitops'
+  staticClients: |
+    - id: weave-gitops
+      redirectURIs:
+      - 'https://weave.catboy.rest/oauth2/callback'
+      name: 'Weave Gitops'
+      secret: ${vault:secret/data/dex-staticClient-secret#secret}

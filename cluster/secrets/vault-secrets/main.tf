@@ -25,6 +25,6 @@ resource "random_string" "dex-staticClient-secret" {
 resource "vault_generic_secret" "dex-staticClient-secret" {
   path = "secret/dex-staticClient-secret"
   data_json = jsonencode({
-    token = "${random_string.dex-staticClient-secret.result}"
+    secret = "${random_string.dex-staticClient-secret.result}"
   })
 }

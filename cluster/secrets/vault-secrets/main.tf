@@ -16,3 +16,15 @@ provider "vault" {
   address = "https://vault:8200"
   token   = var.vault-root
 }
+
+resource "random_string" "dex-token" {
+  length  = 24
+  special = false
+}
+
+resource "vault_generic_secret" "dex-client-token" {
+  path = "secret/dex-client-token"
+  data_json = jsonencode({
+    token = "${random_string.dex-token.result}"
+  })
+}

@@ -12,12 +12,11 @@ metadata:
     vault.security.banzaicloud.io/vault-addr: "https://vault.vault:8200"
     vault.security.banzaicloud.io/vault-role: "default"
     vault.security.banzaicloud.io/vault-tls-secret: vault-tls
+type: Opaque
 data:
-  config.yaml: >
-
-staticClients:
-- id: weave-gitops
-  redirectURIs:
-  - 'https://weave.catboy.rest/oauth2/callback'
-  name: 'Weave Gitops'
-  secret: ${vault:secret/data/dex-staticClient-secret#secret}
+  staticClients: |
+    - id: weave-gitops
+      redirectURIs:
+      - 'https://weave.catboy.rest/oauth2/callback'
+      name: 'Weave Gitops'
+      secret: ${vault:secret/data/dex-staticClient-secret#secret}

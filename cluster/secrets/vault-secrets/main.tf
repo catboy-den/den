@@ -17,13 +17,13 @@ provider "vault" {
   token   = var.vault-root
 }
 
-resource "random_string" "dex-token" {
+resource "random_string" "dex-staticClient-token" {
   length  = 24
   special = false
 }
 
-resource "vault_generic_secret" "dex-client-token" {
-  path = "secret/dex-client-token"
+resource "vault_generic_secret" "dex-staticClient-token" {
+  path = "secret/dex-staticClient-token"
   data_json = jsonencode({
     token = "${random_string.dex-token.result}"
   })

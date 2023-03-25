@@ -38,5 +38,4 @@ spec:
   - kind: ConfigMap
     name: dex-static-clients
     valuesKey: staticClients
-    targetPath: config.staticClients
     optional: false

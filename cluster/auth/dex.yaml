@@ -20,7 +20,7 @@ metadata:
   name: dex-flux-values
   namespace: dex
 data:
-  values.yaml: |
+  values: |
     serviceMonitor:
       enabled: true
     config:
@@ -77,10 +77,20 @@ spec:
   valuesFrom:
   - kind: ConfigMap
     name: dex-flux-values
-    valuesKey: values.yaml
+    valuesKey: values
     optional: false
   - kind: Secret
     name: dex-static-clients
     valuesKey: staticClients
     targetPath: config.staticClients
+    optional: false
+  - kind: Secret
+    name: github-oauth
+    valuesKey: client-id
+    targetPath: config.connectors[0].config.clientID
+    optional: false
+  - kind: Secret
+    name: github-oauth
+    valuesKey: client-secret
+    targetPath: config.connectors[0].config.clientSecret
     optional: false

@@ -18,7 +18,7 @@ metadata:
   name: dex-flux-values
   namespace: dex
 data:
-  values: |
+  values.yaml: |
     serviceMonitor:
       enabled: true
     config:
@@ -75,11 +75,11 @@ spec:
   valuesFrom:
   - kind: ConfigMap
     name: dex-flux-values
-    valuesKey: values
+    valuesKey: values.yaml
     optional: false
   - kind: Secret
     name: dex-static-clients
-    valuesKey: staticClients
+    valuesKey: staticClients.yaml
     targetPath: config
     optional: false
   - kind: Secret

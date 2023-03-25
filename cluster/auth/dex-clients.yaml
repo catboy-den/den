@@ -20,4 +20,4 @@ stringData:
       redirectURIs:
       - 'https://weave.catboy.rest/oauth2/callback'
       name: 'Weave Gitops'
-      secret: <replace-with-actual-secret-value-from-Vault>
+      secret: ${vault:secret/data/dex-staticClient-secret#secret}

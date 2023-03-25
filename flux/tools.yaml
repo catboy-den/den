@@ -1,7 +1,7 @@
 apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
 kind: Kustomization
 metadata:
-  name: auth
+  name: tools
   namespace: flux-system
 spec:
   interval: 15m # detect drift and undo kubectl edits every hour

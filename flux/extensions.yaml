@@ -14,5 +14,3 @@ spec:
   path: ./cluster/extensions
   prune: true # remove any elements later removed from the above path
   wait: true
-  dependsOn:
-  - name: flux-system

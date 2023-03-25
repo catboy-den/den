@@ -15,8 +15,9 @@ metadata:
 type: Opaque
 data:
   staticClients: |
-    - id: weave-gitops
-      redirectURIs:
-      - 'https://weave.catboy.rest/oauth2/callback'
-      name: 'Weave Gitops'
-      secret: ${vault:secret/data/dex-staticClient-secret#secret}
+    staticClients:
+      - id: weave-gitops
+        redirectURIs:
+        - 'https://weave.catboy.rest/oauth2/callback'
+        name: 'Weave Gitops'
+        secret: ${vault:secret/data/dex-staticClient-secret#secret}

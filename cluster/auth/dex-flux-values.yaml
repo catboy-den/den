@@ -1,9 +1,13 @@
 apiVersion: v1
-kind: ConfigMap
+kind: Secret
 metadata:
   name: dex-flux-values
   namespace: dex
-data:
+  annotations:
+    vault.security.banzaicloud.io/vault-addr: "https://vault.vault:8200"
+    vault.security.banzaicloud.io/vault-role: "default"
+    vault.security.banzaicloud.io/vault-tls-secret: vault-tls
+stringData:
   values: |-
     serviceMonitor:
       enabled: true
@@ -26,6 +30,12 @@ data:
           useLoginAsID: false
           orgs:
             - name: catboy-den
+      staticClients:
+        - id: weave-gitops
+          redirectURIs:
+          - 'https://weave.catboy.rest/oauth2/callback'
+          name: 'Weave Gitops'
+          secret: ${vault:secret/data/dex-staticClient-secret#secret}
     ingress:
       enabled: true
       annotations:

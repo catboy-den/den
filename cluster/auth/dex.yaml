@@ -31,11 +31,7 @@ spec:
         namespace: dex
       interval: 12h
   valuesFrom:
-  - kind: ConfigMap
+  - kind: Secret
     name: dex-flux-values
     valuesKey: values
-    optional: false
-  - kind: ConfigMap
-    name: dex-static-clients
-    valuesKey: staticClients
     optional: false

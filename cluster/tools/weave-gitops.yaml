@@ -20,6 +20,10 @@ kind: Secret
 metadata:
   name: oidc-auth
   namespace: flux-system
+  annotations:
+    vault.security.banzaicloud.io/vault-addr: "https://vault.vault:8200"
+    vault.security.banzaicloud.io/vault-role: "default"
+    vault.security.banzaicloud.io/vault-tls-secret: vault-tls
 type: Opaque
 stringData:
   clientID: weave-gitops

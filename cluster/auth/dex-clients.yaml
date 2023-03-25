@@ -7,9 +7,8 @@ metadata:
     vault.security.banzaicloud.io/vault-addr: "https://vault.vault:8200"
     vault.security.banzaicloud.io/vault-role: "default"
     vault.security.banzaicloud.io/vault-tls-secret: vault-tls
-type: Opaque
 data:
-  staticClients: |-
+  staticClients: |
     - id: weave-gitops
       redirectURIs:
       - 'https://weave.catboy.rest/oauth2/callback'

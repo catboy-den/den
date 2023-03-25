@@ -47,8 +47,8 @@ stringData:
           orgs:
             - name: catboy-den
               teams:
-                - cluster-admin
-                - cluster-user
+              - cluster-admin
+              - cluster-user
       staticClients:
         - id: weave-gitops
           redirectURIs:

@@ -35,3 +35,13 @@ spec:
     name: dex-flux-values
     valuesKey: values
     optional: false
+  - kind: Secret
+    name: github-oauth
+    valuesKey: client-id
+    targetPath: config.connectors[0].config.clientID
+    optional: false
+  - kind: Secret
+    name: github-oauth
+    valuesKey: client-secret
+    targetPath: config.connectors[0].config.clientSecret
+    optional: false

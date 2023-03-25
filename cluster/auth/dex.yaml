@@ -35,7 +35,7 @@ spec:
     name: dex-flux-values
     valuesKey: values
     optional: false
-  - kind: Secret
+  - kind: ConfigMap
     name: dex-static-clients
     valuesKey: staticClients
     targetPath: config.staticClients

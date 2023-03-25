@@ -81,6 +81,6 @@ spec:
     optional: false
   - kind: Secret
     name: dex-static-clients
-    valuesKey: staticClients.yaml
-    targetPath: config
+    valuesKey: staticClients
+    targetPath: config.staticClients
     optional: false

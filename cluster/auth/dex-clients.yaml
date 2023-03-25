@@ -9,8 +9,7 @@ metadata:
     vault.security.banzaicloud.io/vault-tls-secret: vault-tls
 type: Opaque
 stringData:
-  staticClients.yaml: |
-    staticClients:
+  staticClients: |
     - id: weave-gitops
       redirectURIs:
       - 'https://weave.catboy.rest/oauth2/callback'

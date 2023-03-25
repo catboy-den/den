@@ -1,11 +1,4 @@
 apiVersion: v1
-kind: Namespace
-metadata:
-  name: dex
-  labels:
-    sealedSecret: github-oauth
----
-apiVersion: v1
 kind: ConfigMap
 metadata:
   name: dex-static-clients

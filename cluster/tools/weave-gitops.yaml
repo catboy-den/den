@@ -31,31 +31,6 @@ stringData:
   issuerURL: https://dex.catboy.rest
   redirectURL: https://weave.catboy.rest/oauth2/callback
 ---
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: weave-gitops-flux-values
-  namespace: flux-system
-data:
-  values: |
-    metrics:
-      enabled: true
-    ingress:
-      enabled: true
-      annotations:
-        cert-manager.io/cluster-issuer: letsencrypt-issuer
-        traefik.ingress.kubernetes.io/router.entrypoints: websecure
-        traefik.ingress.kubernetes.io/router.tls: "true"
-      hosts:
-        - host: weave.catboy.rest
-          paths:
-            - path: /
-              pathType: Prefix
-      tls:
-        - hosts:
-            - weave.catboy.rest
-          secretName: weave-gitops-cert
----
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
@@ -73,11 +48,25 @@ spec:
   values:
     additionalArgs:
     - --auth-methods=oidc
-  valuesFrom:
-  - kind: ConfigMap
-    name: weave-gitops-flux-values
-    valuesKey: values
-    optional: false
+    metrics:
+      enabled: true
+    ingress:
+      enabled: true
+      annotations:
+        cert-manager.io/cluster-issuer: letsencrypt-issuer
+        traefik.ingress.kubernetes.io/router.entrypoints: websecure
+        traefik.ingress.kubernetes.io/router.tls: "true"
+      hosts:
+      - host: weave.catboy.rest
+        paths:
+        - path: /
+          pathType: Prefix
+      tls:
+      - hosts:
+        - weave.catboy.rest
+        secretName: weave-gitops-cert
+    rbac:
+      create: true
   interval: 1h
 ---
 apiVersion: rbac.authorization.k8s.io/v1

@@ -53,6 +53,8 @@ spec:
       value: "Login with GitHub"
     - name: WEAVE_GITOPS_FEATURE_CLUSTER_USER_AUTH
       value: "false"
+    - name: CLUSTER_USER_AUTH
+      value: "false"
     metrics:
       enabled: true
     ingress:

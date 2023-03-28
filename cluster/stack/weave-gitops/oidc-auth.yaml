@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: oidc-auth
+  namespace: flux-system
+  annotations:
+    vault.security.banzaicloud.io/vault-addr: "https://vault.vault:8200"
+    vault.security.banzaicloud.io/vault-role: "default"
+    vault.security.banzaicloud.io/vault-tls-secret: vault-tls
+type: Opaque
+stringData:
+  clientID: weave-gitops
+  clientSecret: ${vault:secret/data/dex-staticClient-secret#secret}
+  issuerURL: https://dex.catboy.rest
+  redirectURL: https://weave.catboy.rest/oauth2/callback

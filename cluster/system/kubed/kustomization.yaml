@@ -4,6 +4,5 @@ metadata:
   name: kubed
 namespace: kube-system
 resources:
-  - namespace.yaml
   - repository.yaml
   - release.yaml

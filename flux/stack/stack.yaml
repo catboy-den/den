@@ -17,5 +17,4 @@ spec:
   dependsOn:
   - name: sealed-secrets
   - name: vault-secrets
-  - name: extensions
-  - name: cert-manager-issuers
+  - name: system

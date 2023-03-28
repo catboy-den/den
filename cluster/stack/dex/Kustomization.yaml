@@ -4,7 +4,7 @@ metadata:
   name: dex
 namespace: flux-system
 resources:
-  - dex-values.yaml
+  - values.yaml
   - namespace.yaml
   - repository.yaml
   - release.yaml

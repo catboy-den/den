@@ -24,7 +24,7 @@ spec:
   releaseName: tf-controller
   targetNamespace: flux-system
   install:
-    crds: Create
+    crds: CreateReplace
   upgrade:
     crds: CreateReplace
   values:

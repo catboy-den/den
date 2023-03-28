@@ -11,8 +11,8 @@ spec:
     kind: GitRepository
     name: flux-system
     namespace: flux-system
-  path: ./cluster/system/cert-issuers
+  path: ./cluster/cert-issuers
   prune: true # remove any elements later removed from the above path
   wait: true
   dependsOn:
-  - name: system
+    - name: system

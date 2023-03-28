@@ -18,3 +18,4 @@ spec:
   - name: sealed-secrets
   - name: vault-secrets
   - name: system
+  - name: cert-issuers

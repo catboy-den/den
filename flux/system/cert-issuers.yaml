@@ -1,7 +1,7 @@
 apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
 kind: Kustomization
 metadata:
-  name: cert-manager
+  name: cert-issuers
   namespace: flux-system
 spec:
   interval: 2h # detect drift and undo kubectl edits every hour
@@ -11,6 +11,8 @@ spec:
     kind: GitRepository
     name: flux-system
     namespace: flux-system
-  path: ./cluster/system/cert-manager
+  path: ./cluster/system/cert-issuers
   prune: true # remove any elements later removed from the above path
   wait: true
+  dependsOn:
+  - name: system

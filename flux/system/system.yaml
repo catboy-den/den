@@ -14,5 +14,3 @@ spec:
   path: ./cluster/system
   prune: true # remove any elements later removed from the above path
   wait: true
-  dependsOn:
-  - name: cert-manager-issuers

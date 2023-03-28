@@ -4,4 +4,4 @@ metadata:
   name: system
 spec:
   exclude:
-  - cert-manager/**
+  - cert-issuers/**

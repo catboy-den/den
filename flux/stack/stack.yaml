@@ -1,7 +1,7 @@
 apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
 kind: Kustomization
 metadata:
-  name: extensions
+  name: stack
   namespace: flux-system
 spec:
   interval: 15m # detect drift and undo kubectl edits every hour
@@ -11,6 +11,11 @@ spec:
     kind: GitRepository
     name: flux-system
     namespace: flux-system
-  path: ./cluster/extensions
+  path: ./cluster/stack
   prune: true # remove any elements later removed from the above path
   wait: true
+  dependsOn:
+  - name: sealed-secrets
+  - name: vault-secrets
+  - name: extensions
+  - name: cert-manager-issuers

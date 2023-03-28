@@ -1,8 +1,10 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
+metadata:
+  name: dex
 namespace: flux-system
 resources:
-- dex-values.yaml
-- namespace.yaml
-- repository.yaml
-- release.yaml
+  - dex-values.yaml
+  - namespace.yaml
+  - repository.yaml
+  - release.yaml

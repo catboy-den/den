@@ -28,6 +28,7 @@ spec:
   upgrade:
     crds: CreateReplace
   values:
+    installCRDs: true
     replicaCount: 1
     concurrency: 24
     resources:

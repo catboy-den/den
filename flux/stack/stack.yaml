@@ -15,7 +15,6 @@ spec:
   prune: true # remove any elements later removed from the above path
   wait: true
   dependsOn:
-  - name: sealed-secrets
-  - name: vault-secrets
-  - name: system
-  - name: cert-issuers
+    - name: secrets
+    - name: system
+    - name: cert-issuers

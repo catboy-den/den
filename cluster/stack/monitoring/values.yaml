@@ -30,11 +30,9 @@ stringData:
           traefik.ingress.kubernetes.io/router.entrypoints: websecure
           traefik.ingress.kubernetes.io/router.tls: "true"
         hosts:
-          - host: grafana.catboy.rest
-            paths:
-              - path: /
-                pathType: Prefix
+          - grafana.catboy.rest
+        path: /
         tls:
-          - hosts:
+          - secretname: grafana-cert
+            hosts:
               - grafana.catboy.rest
-            secretName: grafana-cert

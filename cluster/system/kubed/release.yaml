@@ -14,3 +14,6 @@ spec:
         name: kubed-repo
         namespace: kube-system
       interval: 12h
+  # https://github.com/kubeops/config-syncer/blob/v0.13.2/charts/kubed/values.yaml
+  values:
+    enableAnalytics: false

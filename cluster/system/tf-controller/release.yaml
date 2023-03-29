@@ -15,11 +15,19 @@ spec:
   releaseName: tf-controller
   targetNamespace: flux-system
   install:
-    crds: CreateReplace
+    crds: Create
   upgrade:
     crds: CreateReplace
+  # https://github.com/weaveworks/tf-controller/blob/main/charts/tf-controller/values.yaml
   values:
     installCRDs: true
+    metrics:
+      # -- Enable Metrics Service
+      enabled: true
+      # ServiceMonitor
+      serviceMonitor:
+        # -- Enable ServiceMonitor
+        enabled: true
     replicaCount: 1
     concurrency: 24
     resources:

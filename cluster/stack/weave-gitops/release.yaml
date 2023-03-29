@@ -12,6 +12,7 @@ spec:
       sourceRef:
         kind: HelmRepository
         name: weave-gitops
+  # https://github.com/weaveworks/weave-gitops/blob/main/charts/gitops-server/values.yaml
   values:
     additionalArgs:
       - --auth-methods=oidc

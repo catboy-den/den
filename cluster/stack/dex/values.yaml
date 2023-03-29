@@ -7,6 +7,7 @@ metadata:
     vault.security.banzaicloud.io/vault-addr: "https://vault.vault:8200"
     vault.security.banzaicloud.io/vault-role: "default"
     vault.security.banzaicloud.io/vault-tls-secret: vault-tls
+# https://github.com/dexidp/helm-charts/blob/master/charts/dex/values.yaml
 stringData:
   values: |-
     serviceMonitor:

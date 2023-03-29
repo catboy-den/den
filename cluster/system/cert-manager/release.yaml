@@ -14,6 +14,10 @@ spec:
         name: cert-manager-repo
         namespace: cert-manager
       interval: 12h
+  # https://github.com/cert-manager/cert-manager/blob/master/deploy/charts/cert-manager/values.yaml
   values:
     installCRDs: true
-    # prometheus.enabled: true
+    prometheus:
+      enabled: true
+      servicemonitor:
+        enabled: true

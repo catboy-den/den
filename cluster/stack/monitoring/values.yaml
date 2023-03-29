@@ -35,3 +35,18 @@ stringData:
           - secretName: grafana-cert
             hosts:
               - grafana.catboy.rest
+      grafana.ini:
+        server:
+          domain: grafana.catboy.rest
+          root_url = https://grafana.catboy.rest
+        auth.basic
+          enabled = false
+        auth.generic_oauth
+          name = Dex
+          enabled = true
+          scopes = openid profile email groups
+          client_id = grafana
+          client_secret = secret
+          auth_url = https://dex.catboy.rest/auth
+          token_url =https://dex.catboy.rest/token
+          api_url = https://dex.catboy.rest/userinfo

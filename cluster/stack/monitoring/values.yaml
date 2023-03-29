@@ -31,8 +31,7 @@ stringData:
           traefik.ingress.kubernetes.io/router.tls: "true"
         hosts:
           - grafana.catboy.rest
-        path: /
         tls:
-          - secretname: grafana-cert
+          - secretName: grafana-cert
             hosts:
               - grafana.catboy.rest

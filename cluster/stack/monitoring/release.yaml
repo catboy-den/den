@@ -19,13 +19,9 @@ spec:
   # https://github.com/prometheus-community/helm-charts/blob/main/charts/kube-prometheus-stack/values.yaml
   valuesFrom:
     - kind: Secret
-      name: dex-flux-values
+      name: kube-promotheus-stack-values
       valuesKey: values
       optional: false
-      grafana:
-        ingress:
-          enabled: true
-        grafana.ini:
   postRenderers:
     - kustomize:
         patches:

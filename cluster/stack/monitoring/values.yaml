@@ -39,11 +39,14 @@ stringData:
         server:
           domain: grafana.catboy.rest
           root_url: https://grafana.catboy.rest
+        auth:
+          disable_login_form: true
         auth.basic:
           enabled: false
         auth.generic_oauth:
           name: Dex
           enabled: true
+          auto_login: true
           scopes: openid profile email groups
           client_id: grafana
           client_secret: secret

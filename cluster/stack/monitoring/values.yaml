@@ -36,6 +36,11 @@ stringData:
             hosts:
               - grafana.catboy.rest
       grafana.ini:
+        log:
+          mode: console
+          level: debug
+        log.console:
+          level: debug
         server:
           domain: grafana.catboy.rest
           root_url: https://grafana.catboy.rest
@@ -49,7 +54,8 @@ stringData:
           auto_login: true
           scopes: openid profile email groups
           allow_assign_grafana_admin: true
-          role_attribute_path: contains(info.groups[*], 'cluster-admin') && 'GrafanaAdmin' || contains(info.groups[*], 'cluster-user') && 'Viewer' || 'Viewer'
+          role_attribute_path: contains(info.groups[*], 'cluster-admin') && 'GrafanaAdmin' || contains(info.groups[*], 'cluster-user') && 'Viewer'
+          role_attribute_strict: true
           client_id: grafana
           client_secret: ${vault:secret/data/dex-staticClient-secret#secret}
           auth_url: https://dex.catboy.rest/auth

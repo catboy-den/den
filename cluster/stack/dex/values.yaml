@@ -26,7 +26,7 @@ stringData:
           name: GitHub
           config:
             redirectURI: https://dex.catboy.rest/callback
-            loadAllGroups: false
+            loadAllGroups: true
             teamNameField: slug
             useLoginAsID: false
             orgs:

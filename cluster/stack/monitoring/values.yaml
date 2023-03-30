@@ -54,7 +54,8 @@ stringData:
           auto_login: true
           scopes: openid profile email groups
           allow_assign_grafana_admin: true
-          role_attribute_path: contains(groups[*], 'cluster-admin') && 'GrafanaAdmin' || contains(groups[*], 'cluster-user') && 'Viewer'
+          role_attribute_path: contains(groups, 'catboy-den:cluster-admin') && 'GrafanaAdmin' || contains(groups, 'catboy-den:cluster-user') && 'Viewer'
+          role_attribute_strict: true
           client_id: grafana
           client_secret: ${vault:secret/data/dex-staticClient-secret#secret}
           auth_url: https://dex.catboy.rest/auth

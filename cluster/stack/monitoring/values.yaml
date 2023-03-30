@@ -23,6 +23,7 @@ stringData:
           matchLabels:
             app.kubernetes.io/component: monitoring
     grafana:
+      adminPassword: ${vault:secret/data/grafana-admin#password}
       ingress:
         enabled: true
         annotations:
@@ -36,11 +37,6 @@ stringData:
             hosts:
               - grafana.catboy.rest
       grafana.ini:
-        log:
-          mode: console
-          level: debug
-        log.console:
-          level: debug
         server:
           domain: grafana.catboy.rest
           root_url: https://grafana.catboy.rest

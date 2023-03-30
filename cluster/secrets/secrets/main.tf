@@ -22,9 +22,21 @@ resource "random_string" "dex-staticClient-secret" {
   special = false
 }
 
+resource "random_string" "grafana-admin" {
+  length  = 24
+  special = false
+}
+
 resource "vault_generic_secret" "dex-staticClient-secret" {
   path = "secret/dex-staticClient-secret"
   data_json = jsonencode({
     secret = "${random_string.dex-staticClient-secret.result}"
+  })
+}
+
+resource "vault_generic_secret" "grafana-admin" {
+  path = "secret/grafana-admin"
+  data_json = jsonencode({
+    password = "${random_string.grafana-admin.result}"
   })
 }

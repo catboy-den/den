@@ -11,4 +11,4 @@ resources:
 secretGenerator:
   - name: test-values
     files:
-      - valuesTest.yaml
+      - valuesTest.secret

@@ -49,7 +49,7 @@ stringData:
           auto_login: true
           scopes: openid profile email groups
           client_id: grafana
-          client_secret: secret
+          client_secret: ${vault:secret/data/dex-staticClient-secret#secret}
           auth_url: https://dex.catboy.rest/auth
           token_url: https://dex.catboy.rest/token
           api_url: https://dex.catboy.rest/userinfo

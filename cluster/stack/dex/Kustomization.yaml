@@ -8,3 +8,7 @@ resources:
   - namespace.yaml
   - repository.yaml
   - release.yaml
+secretGenerator:
+  - name: test-values
+    files:
+      - valuesTest.yaml

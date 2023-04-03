@@ -7,7 +7,7 @@ spec:
   interval: 30m
   chart:
     spec:
-      chart: valheim
+      chart: valheim-k8s
       version: "1.x.x"
       sourceRef:
         kind: HelmRepository

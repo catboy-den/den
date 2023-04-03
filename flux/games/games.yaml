@@ -1,0 +1,19 @@
+apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
+kind: Kustomization
+metadata:
+  name: games
+  namespace: flux-system
+spec:
+  interval: 2h # detect drift and undo kubectl edits every hour
+  retryInterval: 3m # retry every minute on apply or waiting failures
+  timeout: 2m # wait for all applied resources to become ready
+  sourceRef:
+    kind: GitRepository
+    name: flux-system
+    namespace: flux-system
+  path: ./cluster/games
+  prune: true # remove any elements later removed from the above path
+  wait: true
+  dependsOn:
+  - name: system
+  - name: cert-issuers

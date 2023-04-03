@@ -1,0 +1,31 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: valheim
+  namespace: games-valheim
+spec:
+  interval: 30m
+  chart:
+    spec:
+      chart: valheim
+      version: "1.x.x"
+      sourceRef:
+        kind: HelmRepository
+        name: valheim-repo
+        namespace: games-valheim
+      interval: 12h
+  # https://github.com/Addyvan/valheim-k8s/blob/main/chart/values.yaml
+  values:
+    worldName: catboy-cafe
+    serverName: Catboy Cafe
+    password: headpatrequired
+    storage:
+      kind: persistentVolumeClaim
+      pvc:
+        storageClassName: longhorn
+        size: 1Gi
+    serverStorage:
+      kind: persistentVolumeClaim
+      pvc:
+        storageClassName: longhorn
+        size: 5Gi

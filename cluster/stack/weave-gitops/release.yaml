@@ -9,20 +9,21 @@ spec:
   chart:
     spec:
       chart: weave-gitops
+      version: 4.x
       sourceRef:
         kind: HelmRepository
         name: weave-gitops
   # https://github.com/weaveworks/weave-gitops/blob/main/charts/gitops-server/values.yaml
   values:
     additionalArgs:
-      - --auth-methods=oidc
+    - --auth-methods=oidc
     envVars:
-      - name: WEAVE_GITOPS_FEATURE_OIDC_BUTTON_LABEL
-        value: "Login with GitHub"
-      - name: WEAVE_GITOPS_FEATURE_CLUSTER_USER_AUTH
-        value: "false"
-      - name: CLUSTER_USER_AUTH
-        value: "false"
+    - name: WEAVE_GITOPS_FEATURE_OIDC_BUTTON_LABEL
+      value: "Login with GitHub"
+    - name: WEAVE_GITOPS_FEATURE_CLUSTER_USER_AUTH
+      value: "false"
+    - name: CLUSTER_USER_AUTH
+      value: "false"
     metrics:
       enabled: true
     ingress:
@@ -32,14 +33,14 @@ spec:
         traefik.ingress.kubernetes.io/router.entrypoints: websecure
         traefik.ingress.kubernetes.io/router.tls: "true"
       hosts:
-        - host: weave.catboy.rest
-          paths:
-            - path: /
-              pathType: Prefix
+      - host: weave.catboy.rest
+        paths:
+        - path: /
+          pathType: Prefix
       tls:
-        - hosts:
-            - weave.catboy.rest
-          secretName: weave-gitops-cert
+      - hosts:
+        - weave.catboy.rest
+        secretName: weave-gitops-cert
     rbac:
       create: true
   interval: 1h

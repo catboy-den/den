@@ -30,4 +30,4 @@ spec:
         storageClassName: longhorn
         size: 5Gi
     networking:
-      serviceType: NodePort
+      serviceType: LoadBalancer

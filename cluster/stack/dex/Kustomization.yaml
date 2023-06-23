@@ -4,7 +4,7 @@ metadata:
   name: dex
 namespace: dex
 resources:
-  - values.yaml
-  - namespace.yaml
-  - repository.yaml
-  - release.yaml
+- values.yaml
+- namespace.yaml
+- repository.yaml
+- release.yaml

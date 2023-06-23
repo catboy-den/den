@@ -16,7 +16,7 @@ spec:
   # https://github.com/weaveworks/weave-gitops/blob/main/charts/gitops-server/values.yaml
   values:
     additionalArgs:
-    - --auth-methods=oidc
+    - --auth-methods oidc
     envVars:
     - name: WEAVE_GITOPS_FEATURE_OIDC_BUTTON_LABEL
       value: "Login with GitHub"

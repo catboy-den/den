@@ -21,5 +21,5 @@ spec:
     app: miha
   ports:
   - protocol: TCP
-    port: 9122
+    port: 9121
     targetPort: 9121

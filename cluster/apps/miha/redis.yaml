@@ -28,10 +28,9 @@ spec:
         - 'yes'
         - --maxmemory
         - 256Mb
-        volumes:
-        - name: lv-storage
-          persistentVolumeClaim:
-            claimName: miha-redis-pvc
+        volumeMounts:
+        - name: miha-redis-data
+          mountPath: /data
         resources:
           requests:
             cpu: 250m
@@ -64,3 +63,7 @@ spec:
             memory: 256Mi
         ports:
         - containerPort: 9121
+      volumes:
+      - name: miha-redis-data
+        persistentVolumeClaim:
+          claimName: miha-redis

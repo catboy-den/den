@@ -24,9 +24,6 @@ spec:
       - name: redis
         image: redislabs/redismod
         args:
-        - redis-server
-        - --save
-        - ""
         - --appendonly
         - "yes"
         - --maxmemory

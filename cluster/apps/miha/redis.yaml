@@ -28,6 +28,10 @@ spec:
         - 'yes'
         - --maxmemory
         - 256Mb
+        volumes:
+        - name: lv-storage
+          persistentVolumeClaim:
+            claimName: miha-longhorn-redis
         resources:
           requests:
             cpu: 250m

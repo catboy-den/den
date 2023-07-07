@@ -5,9 +5,10 @@ metadata:
 provisioner: driver.longhorn.io
 allowVolumeExpansion: true
 parameters:
+  numberOfReplicas: "1"
   staleReplicaTimeout: "30"
   fromBackup: ""
-  recurringJobs: '[ { "name":"miha-redis-snap", "task":"snapshot", "cron":"*/30 * * * *", "retain":6 }, { "name":"miha-redis-backup", "task":"backup", "cron":"0 */6 * * *", "retain":12 } ]'
+  recurringJobs: '[ { "name":"miha-redis-snap", "task":"snapshot", "cron":"*/30 * * * *", "retain":6 }, { "name":"miha-redis-backup", "task":"backup", "cron":"0 */6 * * *Z", "retain":12 } ]'
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim

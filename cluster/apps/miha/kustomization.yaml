@@ -7,4 +7,3 @@ resources:
 - namespace.yaml
 - redis.yaml
 - redis-service.yaml
-- redis-service-monitor.yaml

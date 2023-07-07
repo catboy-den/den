@@ -3,6 +3,7 @@ kind: ServiceMonitor
 metadata:
   name: redis-exporter-monitor
 spec:
+  jobLabel: miha-redis-exporter
   selector:
     matchLabels:
       detail: redis

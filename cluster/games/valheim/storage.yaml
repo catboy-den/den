@@ -1,0 +1,11 @@
+kind: StorageClass
+apiVersion: storage.k8s.io/v1
+metadata:
+  name: longhorn-valheim
+provisioner: driver.longhorn.io
+allowVolumeExpansion: true
+parameters:
+  numberOfReplicas: "3"
+  staleReplicaTimeout: "30"
+  fromBackup: ""
+  recurringJobs: '[ { "name":"snap", "task":"snapshot", "cron":"*/30 * * * *", "retain":6 }, { "name":"backup", "task":"backup", "cron":"0 */12 * * *", "retain":12 } ]'

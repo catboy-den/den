@@ -22,12 +22,12 @@ spec:
     storage:
       kind: persistentVolumeClaim
       pvc:
-        storageClassName: longhorn
+        storageClassName: longhorn-valheim
         size: 1Gi
     serverStorage:
       kind: persistentVolumeClaim
       pvc:
-        storageClassName: longhorn
+        storageClassName: longhorn-valheim
         size: 5Gi
     networking:
       serviceType: LoadBalancer

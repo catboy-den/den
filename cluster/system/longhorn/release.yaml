@@ -20,3 +20,5 @@ spec:
       log:
         ## Allowed values are `plain` or `json`.
         format: json
+    persistence:
+      defaultClassReplicaCount: 1

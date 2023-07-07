@@ -17,4 +17,3 @@ spec:
   dependsOn:
   - name: system
   - name: secrets
-  - name: stack

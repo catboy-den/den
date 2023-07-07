@@ -3,7 +3,9 @@ kind: Kustomization
 metadata:
   name: miha
 namespace: miha
+namePrefix: miha
 resources:
 - namespace.yaml
 - redis.yaml
 - redis-service.yaml
+- redis-storage.yaml

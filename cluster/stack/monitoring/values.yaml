@@ -18,10 +18,12 @@ stringData:
           requests:
             cpu: 200m
             memory: 200Mi
-        podMonitorNamespaceSelector: {}
-        podMonitorSelector:
-          matchLabels:
-            app.kubernetes.io/component: monitoring
+        podMonitorNamespaceSelector:
+          any: true
+        podMonitorSelector: {}
+        serviceMonitorNamespaceSelector:
+          any: true
+        serviceMonitorSelector: {}
     grafana:
       adminPassword: ${vault:secret/data/grafana-admin#password}
       ingress:

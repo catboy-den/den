@@ -12,7 +12,7 @@ metadata:
   name: github-oauth
   namespace: kube-system
   annotations:
-  sealedsecrets.bitnami.com/cluster-wide: "true"
+    sealedsecrets.bitnami.com/cluster-wide: "true"
 stringData:
   client-id:
   client-secret:

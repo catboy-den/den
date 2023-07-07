@@ -24,8 +24,6 @@ spec:
       - name: redis
         image: redislabs/redismod
         args:
-        - --appendonly
-        - "yes"
         - --maxmemory
         - 256Mb
         resources:

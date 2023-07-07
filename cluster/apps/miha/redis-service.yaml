@@ -48,4 +48,4 @@ spec:
   endpoints:
   - targetPort: 9121
     path: /metrics
-    interval: 10s
+    interval: 15s

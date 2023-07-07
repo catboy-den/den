@@ -21,11 +21,11 @@ metadata:
   labels:
     detail: redis
     app: miha
+    component: redis-metrics
 spec:
   selector:
     detail: redis
     app: miha
-    component: redis-metrics
   ports:
   - protocol: TCP
     port: 9121

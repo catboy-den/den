@@ -32,6 +32,11 @@ stringData:
         serviceMonitorSelectorNilUsesHelmValues: false
     grafana:
       adminPassword: ${vault:secret/data/grafana-admin#password}
+      dashboards:
+        default:
+          redis-exporter-prometheus:
+            gnetId: 11835
+            datasource: Prometheus
       ingress:
         enabled: true
         annotations:

@@ -25,7 +25,7 @@ spec:
         image: redislabs/redismod
         args:
         - --appendonly
-        - 'true'
+        - 'yes'
         - --maxmemory
         - 256Mb
         resources:

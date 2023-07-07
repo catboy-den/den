@@ -18,6 +18,12 @@ spec:
   values:
     longhornUI:
       replicas: 1
+    longhornConversionWebhook:
+      replicas: 1
+    longhornAdmissionWebhook:
+      replicas: 1
+    longhornRecoveryBackend:
+      replicas: 1
     longhornManager:
       log:
         ## Allowed values are `plain` or `json`.

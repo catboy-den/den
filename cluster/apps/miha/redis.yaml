@@ -31,7 +31,7 @@ spec:
         volumes:
         - name: lv-storage
           persistentVolumeClaim:
-            claimName: miha-longhorn-redis
+            claimName: miha-redis-pvc
         resources:
           requests:
             cpu: 250m

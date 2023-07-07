@@ -16,6 +16,11 @@ spec:
       interval: 12h
   # https://github.com/longhorn/longhorn/blob/master/chart/values.yaml
   values:
+    csi:
+      attacherReplicaCount: 1
+      provisionerReplicaCount: 1
+      resizerReplicaCount: 1
+      snapshotterReplicaCount: 1
     longhornUI:
       replicas: 1
     longhornConversionWebhook:

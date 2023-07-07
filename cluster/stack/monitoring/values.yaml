@@ -21,9 +21,15 @@ stringData:
         podMonitorNamespaceSelector:
           any: true
         podMonitorSelector: {}
+        podMonitorSelectorNilUsesHelmValues: false
+        ruleNamespaceSelector:
+          any: true
+        ruleSelector: {}
+        ruleSelectorNilUsesHelmValues: false
         serviceMonitorNamespaceSelector:
           any: true
         serviceMonitorSelector: {}
+        serviceMonitorSelectorNilUsesHelmValues: false
     grafana:
       adminPassword: ${vault:secret/data/grafana-admin#password}
       ingress:

@@ -50,19 +50,3 @@ spec:
             memory: 256Mi
         ports:
         - containerPort: 9121
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: redis-service
-  labels:
-    detail: redis
-    app: miha
-spec:
-  selector:
-    detail: redis
-    app: miha
-  ports:
-  - protocol: TCP
-    port: 6379
-    targetPort: 6379

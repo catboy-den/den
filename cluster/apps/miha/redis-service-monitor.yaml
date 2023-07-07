@@ -1,0 +1,13 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: redis-exporter-monitor
+spec:
+  selector:
+    matchLabels:
+      app: miha
+  endpoints:
+  - port: redis-exporter-metrics
+    path: /metrics
+    interval: 10s
+    targetPort: 9121

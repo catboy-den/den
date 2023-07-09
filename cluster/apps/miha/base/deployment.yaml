@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: bot
+  labels:
+    detail: bot
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      detail: bot
+  template:
+    metadata:
+      labels:
+        detail: bot
+    spec:
+      containers:
+      - name: miha
+        image: ghcr.io/catboy-den/miha:latest
+        resources:
+          requests:
+            cpu: 250m
+            memory: 512Mi
+          limits:
+            cpu: 250m
+            memory: 512Mi

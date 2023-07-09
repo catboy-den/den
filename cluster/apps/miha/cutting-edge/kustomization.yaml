@@ -16,3 +16,4 @@ resources:
 
 patchesStrategicMerge:
 - redis.yaml
+- deployment.yaml

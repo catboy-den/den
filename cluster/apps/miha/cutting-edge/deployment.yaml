@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: bot
+  labels:
+    detail: bot
+spec:
+  template:
+    spec:
+      containers:
+      - name: miha
+        image: ghcr.io/catboy-den/miha:edge # {"$imagepolicy": "flux-system:miha-edge"}
+        resources:
+          requests:
+            cpu: 250m
+            memory: 512Mi
+          limits:
+            cpu: 250m
+            memory: 512Mi
+        env:
+        - name: DOTNET_REDIS__HOST
+          value: test
+        - name: DOTNET_REDIS__PORT
+          value: test
+        - name: DOTNET_DISCORD__TOKEN
+          valueFrom:
+            secretKeyRef:
+              name: miha-cutting-edge-discord
+              key: token
+        - name: DOTNET_DISCORD__GUILD
+          valueFrom:
+            secretKeyRef:
+              name: miha-cutting-edge-discord
+              key: guild-id

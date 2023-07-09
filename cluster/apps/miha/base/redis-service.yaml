@@ -18,7 +18,6 @@ metadata:
   name: redis-metrics-service
   labels:
     detail: redis
-    component: redis-metrics
 spec:
   selector:
     detail: redis
@@ -36,7 +35,8 @@ spec:
   selector:
     matchLabels:
       detail: redis
-      component: redis-metrics
+    matchNames:
+      name: redis-metrics-service
   namespaceSelector:
     matchNames:
     - miha

@@ -4,7 +4,7 @@ metadata:
   name: redis-metrics-service
 spec:
   selector:
-    component: redis-cutting-edge-metrics
+    component: redis-prod-metrics
 ---
 apiVersion: monitoring.coreos.com/v1
 kind: ServiceMonitor
@@ -13,5 +13,5 @@ metadata:
 spec:
   selector:
     matchLabels:
-      component: redis-cutting-edge-metrics
-      stack: cutting-edge
+      component: redis-prod-metrics
+      stack: prod

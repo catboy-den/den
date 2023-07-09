@@ -4,6 +4,10 @@ metadata:
   name: miha
 namespace: miha
 namePrefix: miha-
+commonLabels:
+  app: miha
+  stack: main
+
 resources:
 - ../base
 - secret-discord.yaml

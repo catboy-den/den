@@ -5,12 +5,15 @@ metadata:
 
 namespace: miha
 namePrefix: miha-cutting-edge-
+commonLabels:
+  app: miha
+  stack: cutting-edge
 
 resources:
 - ../base
 - secret-discord.yaml
 
 patchesStrategicMerge:
-- redis-metrics-monitor.yaml
-- redis-metrics-service.yaml
-- redis-pvc.yaml
+- redis-metrics.yaml
+- redis-storage.yaml
+- redis.yaml

@@ -25,6 +25,10 @@ spec:
         - 'yes'
         - --maxmemory
         - 256Mb
+        - --loadmodule
+        - /usr/lib/redis/modules/rejson.so
+        - --loadmodule
+        - /usr/lib/redis/modules/redisearch.so
         volumeMounts:
         - name: miha-redis-data
           mountPath: /data

@@ -19,11 +19,11 @@ spec:
             memory: 512Mi
         env:
         - name: ASPNETCORE_ENVIRONMENT
-          value: Production
+          value: Development
         - name: DOTNET_REDIS__HOST
-          value: test
+          value: "miha-cutting-edge-redis-service"
         - name: DOTNET_REDIS__PORT
-          value: test
+          value: "6379"
         - name: DOTNET_DISCORD__TOKEN
           valueFrom:
             secretKeyRef:

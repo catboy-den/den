@@ -37,6 +37,9 @@ stringData:
           redis-exporter-prometheus:
             gnetId: 11835
             datasource: Prometheus
+          node-exporter-full:
+            gnetId: 1860
+            datasource: default
       ingress:
         enabled: true
         annotations:

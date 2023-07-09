@@ -1,0 +1,14 @@
+apiVersion: image.toolkit.fluxcd.io/v1beta2
+kind: ImagePolicy
+metadata:
+  name: miha-edge
+  namespace: flux-system
+spec:
+  imageRepositoryRef:
+    name: miha-bot
+  filterTags:
+    pattern: '^(cutting-edge-|edge-)'
+    extract: '-\d+$'
+  policy:
+    numerical:
+      order: asc

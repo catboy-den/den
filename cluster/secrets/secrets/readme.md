@@ -16,5 +16,10 @@ metadata:
 stringData:
   client-id:
   client-secret:
+template:
+  metadata:
+    annotations:
+      sealedsecrets.bitnami.com/cluster-wide: "true"
+      kubed.appscode.com/sync: "sealedSecret="
 type: Opaque
 ```

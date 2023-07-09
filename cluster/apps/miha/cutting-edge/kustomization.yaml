@@ -1,0 +1,20 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+metadata:
+  name: miha-cutting-edge
+namespace: miha
+namePrefix: miha-cutting-edge
+
+resources:
+- ../base
+- secret-discord.yaml
+
+patches:
+- path: redis-metrics.yaml
+  target:
+    kind: Service
+    name: redis-metrics-service
+- path: redis-metrics.yaml
+  target:
+    kind: ServiceMonitor
+    name: redis-metrics

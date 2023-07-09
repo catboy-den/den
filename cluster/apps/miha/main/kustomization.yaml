@@ -5,7 +5,5 @@ metadata:
 namespace: miha
 namePrefix: miha-
 resources:
-- namespace.yaml
-- redis.yaml
-- redis-service.yaml
-- redis-storage.yaml
+- ../base
+- secret-discord.yaml

@@ -11,7 +11,17 @@ variable "flux_repository_name" {
 
 variable "flux_repository_visibility" {
   type    = string
-  default = "private"
+  default = "public"
+}
+
+variable "flux_repository_description" {
+  type    = string
+  default = "Flux centric repository that contains declarations for my entire k3s cluster, rapidly integrated and deployed using flux2"
+}
+
+variable "flux_repository_homepage" {
+  type    = string
+  default = "https://weave.catboy.rest"
 }
 
 variable "flux_repository_branch" {

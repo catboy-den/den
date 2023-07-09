@@ -4,7 +4,7 @@ metadata:
   name: miha
 
 namespace: miha
-namePrefix: miha-prod
+namePrefix: miha-prod-
 
 commonLabels:
   app: miha
@@ -15,6 +15,4 @@ resources:
 - secret-discord.yaml
 
 patchesStrategicMerge:
-- redis-metrics.yaml
-- redis-storage.yaml
 - redis.yaml

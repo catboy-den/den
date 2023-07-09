@@ -13,7 +13,7 @@ metadata:
   name: longhorn-redis
 provisioner: driver.longhorn.io
 parameters:
-  recurringJobs: ''
+  recurringJobs: '[ ]'
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim

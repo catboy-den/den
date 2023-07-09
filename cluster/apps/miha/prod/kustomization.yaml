@@ -15,4 +15,5 @@ resources:
 - secret-discord.yaml
 
 patchesStrategicMerge:
+- deplyoment.yaml
 - redis.yaml

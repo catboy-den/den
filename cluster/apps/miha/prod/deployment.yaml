@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: bot
+  labels:
+    detail: bot
+spec:
+  template:
+    spec:
+      containers:
+      - name: miha
+        image: ghcr.io/catboy-den/miha:latest # {"$imagepolicy": "flux-system:miha-latest"}
+        resources:
+          requests:
+            cpu: 250m
+            memory: 512Mi
+          limits:
+            cpu: 250m
+            memory: 512Mi
+        env:
+        - name: ASPNETCORE_ENVIRONMENT
+          value: Production
+        - name: DOTNET_REDIS__HOST
+          value: "miha-prod-redis-service"
+        - name: DOTNET_REDIS__PORT
+          value: "6379"
+        - name: DOTNET_DISCORD__TOKEN
+          valueFrom:
+            secretKeyRef:
+              name: miha-prod-discord
+              key: token
+        - name: DOTNET_DISCORD__GUILD
+          valueFrom:
+            secretKeyRef:
+              name: miha-prod-discord
+              key: guild-id

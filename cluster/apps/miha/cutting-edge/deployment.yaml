@@ -18,6 +18,8 @@ spec:
             cpu: 250m
             memory: 512Mi
         env:
+        - name: ASPNETCORE_ENVIRONMENT
+          value: Production
         - name: DOTNET_REDIS__HOST
           value: test
         - name: DOTNET_REDIS__PORT

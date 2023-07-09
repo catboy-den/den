@@ -14,4 +14,4 @@ spec:
   selector:
     matchLabels:
       component: redis-cutting-edge-metrics
-
+      stack: cutting-edge

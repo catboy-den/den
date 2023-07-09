@@ -4,11 +4,9 @@ metadata:
   name: redis-service
   labels:
     detail: redis
-    app: miha
 spec:
   selector:
     detail: redis
-    app: miha
   ports:
   - protocol: TCP
     port: 6379
@@ -20,12 +18,10 @@ metadata:
   name: redis-metrics-service
   labels:
     detail: redis
-    app: miha
     component: redis-metrics
 spec:
   selector:
     detail: redis
-    app: miha
   ports:
   - protocol: TCP
     port: 9121
@@ -40,7 +36,6 @@ spec:
   selector:
     matchLabels:
       detail: redis
-      app: miha
       component: redis-metrics
   namespaceSelector:
     matchNames:

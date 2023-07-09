@@ -4,13 +4,11 @@ metadata:
   name: redis
   labels:
     detail: redis
-    app: miha
 spec:
   replicas: 1
   selector:
     matchLabels:
       detail: redis
-      app: miha
   template:
     metadata:
       annotations:
@@ -18,7 +16,6 @@ spec:
         prometheus.io/port: "9121"
       labels:
         detail: redis
-        app: miha
     spec:
       containers:
       - name: redis

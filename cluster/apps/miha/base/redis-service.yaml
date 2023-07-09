@@ -18,6 +18,7 @@ metadata:
   name: redis-metrics-service
   labels:
     detail: redis
+    component: metrics
 spec:
   selector:
     detail: redis
@@ -35,11 +36,7 @@ spec:
   selector:
     matchLabels:
       detail: redis
-    matchExpressions:
-    - key: kubernetes.io/service-name
-      operator: In
-      values:
-      - redis-metrics-service
+      component: metrics
   namespaceSelector:
     matchNames:
     - miha

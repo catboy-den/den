@@ -35,8 +35,11 @@ spec:
   selector:
     matchLabels:
       detail: redis
-    matchNames:
-      name: redis-metrics-service
+    matchExpressions:
+    - key: kubernetes.io/service-name
+      operator: In
+      values:
+      - redis-metrics-service
   namespaceSelector:
     matchNames:
     - miha

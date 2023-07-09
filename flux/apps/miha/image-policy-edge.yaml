@@ -7,8 +7,8 @@ spec:
   imageRepositoryRef:
     name: miha-bot
   filterTags:
-    pattern: '^(cutting-edge-|edge-)'
-    extract: '-\d+$'
+    pattern: '^(cutting-edge-|edge-).*?-(?P<timestamp>\d+)$'
+    extract: '$timestamp'
   policy:
     numerical:
       order: asc

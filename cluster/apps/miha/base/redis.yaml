@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
       - name: redis
-        image: redislabs/redismod
+        image: redislabs/redismod:latest
         args:
         - --appendonly
         - 'yes'

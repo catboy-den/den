@@ -9,7 +9,7 @@ spec:
     spec:
       containers:
       - name: miha
-        image: ghcr.io/catboy-den/miha:cutting-edge-wip-fix-starting-soon-hosted-by-7de8b1f-1689299946 # {"$imagepolicy": "flux-system:miha-edge"}
+        image: ghcr.io/catboy-den/miha:cutting-edge-wip-fix-starting-soon-hosted-by-a93dca2-1689300301 # {"$imagepolicy": "flux-system:miha-edge"}
         resources:
           requests:
             cpu: 250m

@@ -9,7 +9,7 @@ spec:
     spec:
       containers:
       - name: miha
-        image: ghcr.io/catboy-den/miha:0.1.5 # {"$imagepolicy": "flux-system:miha-latest"}
+        image: ghcr.io/catboy-den/miha:0.1.6 # {"$imagepolicy": "flux-system:miha-latest"}
         resources:
           requests:
             cpu: 250m

@@ -40,6 +40,8 @@ stringData:
           node-exporter-full:
             gnetId: 1860
             datasource: default
+      plugins:
+        - grafana-oncall-app
       ingress:
         enabled: true
         annotations:

@@ -8,4 +8,4 @@ parameters:
   numberOfReplicas: "1"
   staleReplicaTimeout: "30"
   fromBackup: ""
-  recurringJobs: '[ { "name":"snap", "task":"snapshot", "cron":"*/30 * * * *", "retain":6 }, { "name":"backup", "task":"backup", "cron":"0 */12 * * *", "retain":12 } ]'
+  recurringJobs: '[ ]'

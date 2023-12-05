@@ -32,6 +32,19 @@ spec:
           value: "localhost"
         - name: DOTNET_REDIS__PORT
           value: "6379"
+        readinessProbe:
+          httpGet:
+            path: /healthz
+            port: 8000
+          failureThreshold: 2
+          periodSeconds: 5
+        livenessProbe:
+          httpGet:
+            path: /healthz
+            port: 8000
+          failureThreshold: 2
+          periodSeconds: 30
+      initContainers:
       - name: redis
         image: redislabs/redismod:latest
         args:
@@ -55,18 +68,6 @@ spec:
             memory: 256Mi
         ports:
         - containerPort: 6379
-        readinessProbe:
-          httpGet:
-            path: /healthz
-            port: 8000
-          failureThreshold: 2
-          periodSeconds: 5
-        livenessProbe:
-          httpGet:
-            path: /healthz
-            port: 8000
-          failureThreshold: 2
-          periodSeconds: 30
       - name: redis-exporter
         image: oliver006/redis_exporter:latest
         env:

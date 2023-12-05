@@ -11,10 +11,6 @@ spec:
         env:
         - name: ASPNETCORE_ENVIRONMENT
           value: Production
-        - name: DOTNET_REDIS__HOST
-          value: "miha-prod-redis-service"
-        - name: DOTNET_REDIS__PORT
-          value: "6379"
         - name: DOTNET_DISCORD__TOKEN
           valueFrom:
             secretKeyRef:

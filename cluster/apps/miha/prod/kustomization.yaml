@@ -17,5 +17,5 @@ labels:
     stack: prod
 
 patches:
-- path: deployment.yaml
+- path: stateful.yaml
 - path: metrics.yaml

@@ -1,5 +1,5 @@
 apiVersion: apps/v1
-kind: Deployment
+kind: StatefulSet
 metadata:
   name: miha
   labels:
@@ -18,32 +18,6 @@ spec:
       prometheus.io/port: "9121"
     spec:
       containers:
-      - name: miha
-        image: ghcr.io/catboy-den/miha:latest
-        resources:
-          requests:
-            cpu: 250m
-            memory: 512Mi
-          limits:
-            cpu: 250m
-            memory: 512Mi
-        env:
-        - name: DOTNET_REDIS__HOST
-          value: "localhost"
-        - name: DOTNET_REDIS__PORT
-          value: "6379"
-        readinessProbe:
-          httpGet:
-            path: /healthz
-            port: 8000
-          failureThreshold: 2
-          periodSeconds: 5
-        livenessProbe:
-          httpGet:
-            path: /healthz
-            port: 8000
-          failureThreshold: 2
-          periodSeconds: 30
       - name: redis
         image: redislabs/redismod:latest
         args:
@@ -104,3 +78,29 @@ spec:
             memory: 256Mi
         ports:
         - containerPort: 9121
+      - name: miha
+        image: ghcr.io/catboy-den/miha:latest
+        resources:
+          requests:
+            cpu: 250m
+            memory: 512Mi
+          limits:
+            cpu: 250m
+            memory: 512Mi
+        env:
+        - name: DOTNET_REDIS__HOST
+          value: "localhost"
+        - name: DOTNET_REDIS__PORT
+          value: "6379"
+        readinessProbe:
+          httpGet:
+            path: /healthz
+            port: 8000
+          failureThreshold: 2
+          periodSeconds: 5
+        livenessProbe:
+          httpGet:
+            path: /healthz
+            port: 8000
+          failureThreshold: 2
+          periodSeconds: 30

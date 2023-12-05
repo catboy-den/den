@@ -1,0 +1,9 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: miha-metrics
+spec:
+  selector:
+    matchLabels:
+      app: miha
+      detail: bot

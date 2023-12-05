@@ -4,6 +4,4 @@ kind: Kustomization
 resources:
 - deployment.yaml
 - namespace.yaml
-- redis-service.yaml
-- redis-storage.yaml
-- redis.yaml
+- metrics.yaml

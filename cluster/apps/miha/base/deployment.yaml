@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: bot
+  name: miha
   labels:
     detail: bot
 spec:
@@ -13,6 +13,9 @@ spec:
     metadata:
       labels:
         detail: bot
+    annotations:
+      prometheus.io/scrape: "true"
+      prometheus.io/port: "9121"
     spec:
       containers:
       - name: miha
@@ -24,3 +27,54 @@ spec:
           limits:
             cpu: 250m
             memory: 512Mi
+        env:
+        - name: DOTNET_REDIS__HOST
+          value: "redis"
+        - name: DOTNET_REDIS__PORT
+          value: "6379"
+      - name: redis
+        image: redislabs/redismod:latest
+        args:
+        - --appendonly
+        - 'yes'
+        - --maxmemory
+        - 256Mb
+        - --loadmodule
+        - /usr/lib/redis/modules/rejson.so
+        - --loadmodule
+        - /usr/lib/redis/modules/redisearch.so
+        # volumeMounts:
+        # - name: miha-redis-data
+        #  mountPath: /data
+        resources:
+          requests:
+            cpu: 250m
+            memory: 256Mi
+          limits:
+            cpu: 250m
+            memory: 256Mi
+        ports:
+        - containerPort: 6379
+      - name: redis-exporter
+        image: oliver006/redis_exporter:latest
+        env:
+        - name: REDIS_EXPORTER_PING_ON_CONNECT
+          value: "true"
+        - name: REDIS_EXPORTER_INCL_SYSTEM_METRICS
+          value: "true"
+        securityContext:
+          runAsUser: 59000
+          runAsGroup: 59000
+          allowPrivilegeEscalation: false
+          capabilities:
+            drop:
+            - ALL
+        resources:
+          requests:
+            cpu: 250m
+            memory: 256Mi
+          limits:
+            cpu: 250m
+            memory: 256Mi
+        ports:
+        - containerPort: 9121

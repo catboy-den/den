@@ -1,9 +1,10 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 metadata:
-  name: miha
+  name: miha-dev
 
 namespace: miha
+nameSuffix: -dev
 
 resources:
 - ../base
@@ -14,7 +15,7 @@ labels:
   pairs:
     app: miha
     detail: bot
-    stack: prod
+    stack: dev
 
 patches:
 - path: deployment.yaml

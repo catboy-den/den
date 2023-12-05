@@ -55,6 +55,20 @@ spec:
             memory: 256Mi
         ports:
         - containerPort: 6379
+        readinessProbe:
+          httpGet:
+            path: /healthz
+            port: 8000
+          failureThreshold: 2
+          periodSeconds: 30
+          initialDelaySeconds: 15
+        livenessProbe:
+          httpGet:
+            path: /healthz
+            port: 8000
+          failureThreshold: 2
+          periodSeconds: 30
+          initialDelaySeconds: 15
       - name: redis-exporter
         image: oliver006/redis_exporter:latest
         env:

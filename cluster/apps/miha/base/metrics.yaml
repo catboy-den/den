@@ -14,3 +14,13 @@ spec:
   - targetPort: 9121
     path: /metrics
     interval: 15s
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: miha-metrics
+spec:
+  ports:
+  - protocol: TCP
+    port: 9121
+    targetPort: 9121

@@ -29,7 +29,7 @@ spec:
             memory: 512Mi
         env:
         - name: DOTNET_REDIS__HOST
-          value: "redis"
+          value: "localhost"
         - name: DOTNET_REDIS__PORT
           value: "6379"
       - name: redis

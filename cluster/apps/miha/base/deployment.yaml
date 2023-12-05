@@ -44,7 +44,6 @@ spec:
             port: 8000
           failureThreshold: 2
           periodSeconds: 30
-      initContainers:
       - name: redis
         image: redislabs/redismod:latest
         args:

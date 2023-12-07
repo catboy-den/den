@@ -11,6 +11,12 @@ spec:
         env:
         - name: ASPNETCORE_ENVIRONMENT
           value: Production
+        - name: DOTNET_REDIS__SEEDING__GUILD__AnnouncementChannel
+          value: '397604957962108931'
+        - name: DOTNET_REDIS__SEEDING__GUILD__AnnouncementRoleId
+          value: '517819199863914516'
+        - name: DOTNET_REDIS__SEEDING__GUILD__WeeklyScheduleChannel
+          value: '480114580664877060'
         - name: DOTNET_DISCORD__TOKEN
           valueFrom:
             secretKeyRef:

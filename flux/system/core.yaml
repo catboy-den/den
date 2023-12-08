@@ -1,20 +1,16 @@
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
-  name: auth
+  name: system-core
   namespace: flux-system
 spec:
-  interval: 2h # detect drift and undo kubectl edits every hour
+  interval: 15m # detect drift and undo kubectl edits every hour
   retryInterval: 3m # retry every minute on apply or waiting failures
   timeout: 2m # wait for all applied resources to become ready
   sourceRef:
     kind: GitRepository
     name: flux-system
     namespace: flux-system
-  path: ./cluster/auth
+  path: ./cluster/system/core
   prune: true # remove any elements later removed from the above path
   wait: true
-  dependsOn:
-  - name: secrets
-  - name: system
-  - name: cert-issuers

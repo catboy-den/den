@@ -1,0 +1,1 @@
+Example: `cat github-oauth.yaml | kubeseal --scope cluster-wide --format yaml > github-oauth-sealed.yaml`

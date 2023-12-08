@@ -5,7 +5,6 @@ metadata:
     sealedsecrets.bitnami.com/cluster-wide: "true"
   creationTimestamp: null
   name: github-oauth
-  namespace: kube-system
 spec:
   encryptedData:
     client-id: AgAtsC7Ru8djHsv+qQ15lMPSbE+jPxpJ6qhv5FjeG4aOzvFYJtPxGfZzHtaemSnSd+mNkuVIV5g2Ofj+ufHLVJuoz1Z+QdOkAzP+AcPNejzazm/w65VNVxbDvrdhmFW9JvkWZ423XDXxwvSgT+2HSP4ln3g+OPEeNWKKN8Mh+/ChSeN6Rcl0+o9fLOaHAZmyW6NJvCUBvcBS5vt8evnMjPY+wV1vis/bXJGOS6kHtnf74YQue1D1wQjcXtH/WOlVuO8e/nqPTvP0r+X28ajLkH8GJ5Oo1KvE94f1pA7IXOQyZenOihHX/PWCG0I41G12I7yAMYsaD/LSxhfN0Hs3Fx1lEkwEvVVkH2FAJAGe2QRI5XoQJg/71rSJG1Wf4Nt0+ifQbTnxQzieoejcLXO2YZ6sbgLdwFGJEMbLfSYt0KTlU2GI+tpTVA+TFWIb3RlzsW78zq3kshpV3QPyu1xh2LBDdWJR0hYRpvquDIZMzQ4f9t7lDJObySGz4Jqbjw2ouQMK3Oh6IbegPXo+7umfeepTitpNhVL3y0Hz8kmC3WF0GUkTbFh/2XKQ7nStGkxHyF48KfX4k7jq4C+4WsxAn0xYAqSoF4kkBImgtVxlhIDQ3Q+NIjCgWQF6Hh+FU79015cz/QoPowyev5FRFPJHTqs9AbY46jhMLF2Ik4iAIdaIx0Kz0t9x4MZS9kPwNfHs4jin+OXinMSilV1Ck8vBbFM/3449FQ==
@@ -14,7 +13,7 @@ spec:
     metadata:
       annotations:
         sealedsecrets.bitnami.com/cluster-wide: "true"
-        kubed.appscode.com/sync: "sealedSecret=github-oauth"
+        # kubed.appscode.com/sync: "sealedSecret=github-oauth"
       creationTimestamp: null
       name: github-oauth
-      namespace: kube-system
+      namespace: system

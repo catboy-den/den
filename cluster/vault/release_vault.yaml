@@ -19,6 +19,10 @@ spec:
       interval: 12h
   # https://github.com/bank-vaults/vault-helm-chart/blob/main/vault/values.yaml
   values:
+    tls:
+      caNamespaces:
+      - vault
+      - system
     unsealer:
       args: ["--mode", "k8s", "--k8s-secret-namespace", "vault", "--k8s-secret-name", "bank-vaults"]
       metrics:

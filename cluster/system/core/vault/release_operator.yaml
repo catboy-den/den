@@ -10,7 +10,7 @@ spec:
       version: "1.x"
       sourceRef:
         kind: HelmRepository
-        name: bank-vaults-repo
+        name: bank-vaults-vault-operator-repo
       interval: 12h
   # https://github.com/bank-vaults/vault-operator/tree/main/deploy/charts/vault-operator
   values:

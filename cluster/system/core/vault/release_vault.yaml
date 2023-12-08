@@ -14,7 +14,7 @@ spec:
       version: "1.x"
       sourceRef:
         kind: HelmRepository
-        name: bank-vaults-repo
+        name: bank-vaults-vault-repo
       interval: 12h
   # https://github.com/bank-vaults/vault-helm-chart/blob/main/vault/values.yaml
   values:

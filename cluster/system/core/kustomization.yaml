@@ -10,5 +10,4 @@ resources:
 - crds
 - kubed
 - sealed-secrets
-- vault
 - tf-controller

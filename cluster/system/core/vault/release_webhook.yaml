@@ -10,7 +10,7 @@ spec:
       version: "1.x"
       sourceRef:
         kind: HelmRepository
-        name: bank-vaults-vault-secrets-webhook-repo
+        name: bank-vaults-repo
       interval: 12h
   # https://github.com/bank-vaults/vault-secrets-webhook/blob/main/deploy/charts/vault-secrets-webhook/values.yaml
   values:

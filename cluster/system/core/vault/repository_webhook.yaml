@@ -1,8 +1,0 @@
-apiVersion: source.toolkit.fluxcd.io/v1beta2
-kind: HelmRepository
-metadata:
-  name: bank-vaults-vault-secrets-webhook-repo
-spec:
-  interval: 24h
-  type: oci
-  url: oci://ghcr.io/bank-vaults/helm-charts

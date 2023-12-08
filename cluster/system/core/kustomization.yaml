@@ -3,6 +3,7 @@ kind: Kustomization
 metadata:
   name: system-core
 namespace: system
+
 resources:
 - namespace.yaml
 - cert-manager

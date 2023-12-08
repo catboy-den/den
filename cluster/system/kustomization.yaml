@@ -8,4 +8,6 @@ resources:
 - cert-manager
 - crds
 - kubed
+- sealed-secrets
+- vault
 - tf-controller

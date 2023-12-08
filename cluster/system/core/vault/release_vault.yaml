@@ -36,16 +36,9 @@ spec:
         auth:
         - type: kubernetes
           roles:
-          # Allow every pod in the system and flux-system namespace to use the secret kv store
-          - name: system
+          # Allow every pod in the default namespace to use the secret kv store
+          - name: default
             bound_service_account_names: "*"
             bound_service_account_namespaces: "*"
-            policies: allow_secrets
-          - name: vault
-            bound_service_account_names: "*"
-            bound_service_account_namespaces: "*"
-            policies: allow_secrets
-          - name: flux-system
-            bound_service_account_names: "*"
-            bound_service_account_namespaces: "*"
-            policies: allow_secrets
+            policies:
+            - allow_secrets

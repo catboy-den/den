@@ -16,13 +16,26 @@ spec:
   # https://github.com/bank-vaults/vault-secrets-webhook/blob/main/deploy/charts/vault-secrets-webhook/values.yaml
   values:
     replicaCount: 1
-    namespaceSelector: {}
+    namespaceSelector:
+      matchExpressions:
+      # https://kubernetes.io/docs/reference/labels-annotations-taints/#kubernetes-io-metadata-name
+      - key: kubernetes.io/metadata.name
+        operator: NotIn
+        values:
+        - kube-system
     objectSelector:
       matchExpressions:
       - key: security.banzaicloud.io/mutate
         operator: NotIn
         values:
         - skip
+    pods:
+      objectSelector:
+        matchExpressions:
+        - key: security.banzaicloud.io/mutate
+          operator: NotIn
+          values:
+          - skip
     metrics:
       enabled: true
       serviceMonitor:

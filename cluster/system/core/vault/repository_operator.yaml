@@ -5,4 +5,4 @@ metadata:
 spec:
   interval: 24h
   type: oci
-  url: oci://ghcr.io/bank-vaults/helm-charts/vault-operator
+  url: oci://ghcr.io/bank-vaults/helm-charts

@@ -40,3 +40,8 @@ resource "vault_generic_secret" "grafana-admin" {
     password = "${random_string.grafana-admin.result}"
   })
 }
+
+variable "vault-root" {
+  type      = string
+  sensitive = true
+}

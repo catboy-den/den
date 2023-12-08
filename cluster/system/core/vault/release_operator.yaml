@@ -4,6 +4,7 @@ metadata:
   name: vault-operator
 spec:
   interval: 30m
+  suspend: false
   chart:
     spec:
       chart: vault-operator

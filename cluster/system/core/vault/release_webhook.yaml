@@ -4,6 +4,7 @@ metadata:
   name: vault-secrets-webhook
 spec:
   interval: 30m
+  suspend: false
   chart:
     spec:
       chart: vault-secrets-webhook

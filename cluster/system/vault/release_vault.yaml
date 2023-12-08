@@ -16,10 +16,10 @@ spec:
         kind: HelmRepository
         name: bank-vaults-repo
       interval: 12h
-  # https://github.com/banzaicloud/bank-vaults/blob/main/charts/vault/values.yaml
+  # https://github.com/bank-vaults/vault-helm-chart/blob/main/vault/values.yaml
   values:
     unsealer:
-      args: ["--mode", "k8s", "--k8s-secret-namespace", "vault", "--k8s-secret-name", "bank-vaults"]
+      args: ["--mode", "k8s", "--k8s-secret-namespace", "system", "--k8s-secret-name", "bank-vaults"]
       metrics:
         enabled: true
         serviceMonitor:
@@ -35,12 +35,8 @@ spec:
         auth:
         - type: kubernetes
           roles:
-          # Allow every pod in the vault, default, flux-system namespace to use the secret kv store
-          - name: vault
-            bound_service_account_names: "*"
-            bound_service_account_namespaces: "*"
-            policies: allow_secrets
-          - name: default
+          # Allow every pod in the system and flux-system namespace to use the secret kv store
+          - name: system
             bound_service_account_names: "*"
             bound_service_account_namespaces: "*"
             policies: allow_secrets

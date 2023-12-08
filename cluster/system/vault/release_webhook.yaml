@@ -12,7 +12,7 @@ spec:
         kind: HelmRepository
         name: bank-vaults-repo
       interval: 12h
-  # https://github.com/banzaicloud/bank-vaults/blob/main/charts/vault-secrets-webhook/values.yaml
+  # https://github.com/bank-vaults/vault-secrets-webhook/blob/main/deploy/charts/vault-secrets-webhook/values.yaml
   values:
     metrics:
       enabled: true

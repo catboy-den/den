@@ -4,4 +4,5 @@ metadata:
   name: bank-vaults-repo
 spec:
   interval: 24h
-  url: https://kubernetes-charts.banzaicloud.com
+  type: oci
+  url: oci://ghcr.io/bank-vaults/helm-charts/vault

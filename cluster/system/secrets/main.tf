@@ -14,7 +14,6 @@ terraform {
 
 provider "vault" {
   address = "https://vault:8200"
-  token   = var.vault-root
 }
 
 resource "random_string" "dex-staticClient-secret" {
@@ -41,8 +40,8 @@ resource "vault_generic_secret" "grafana-admin" {
   })
 }
 
-variable "vault-root" {
-  type      = string
-  sensitive = true
-}
+#variable "vault-root" {
+#  type      = string
+#  sensitive = true
+#}
 

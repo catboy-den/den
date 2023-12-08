@@ -32,7 +32,8 @@ spec:
       serviceMonitor:
         enabled: true
     tls:
-      caNamespaces: ["*"]
+      caNamespaces:
+      - "*"
     vault:
       externalConfig:
         auth:

@@ -13,7 +13,6 @@ terraform {
 }
 
 provider "vault" {
-  address = "https://vault:8200"
 }
 
 resource "random_string" "dex-staticClient-secret" {

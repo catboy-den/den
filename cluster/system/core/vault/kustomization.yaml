@@ -4,9 +4,7 @@ metadata:
   name: vault
   namespace: system
 resources:
-- repository_vault.yaml
-- repository_operator.yaml
-- repository_webhook.yaml
+- repository.yaml
 - release_vault.yaml
 - release_operator.yaml
 - release_webhook.yaml

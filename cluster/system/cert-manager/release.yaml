@@ -4,6 +4,13 @@ metadata:
   name: cert-manager
 spec:
   interval: 30m
+  install:
+    crds: CreateReplace
+  upgrade:
+    crds: CreateReplace
+    remediation:
+      # Number of retries that should be attempted on failures before bailing, a negative integer equals to unlimited retries
+      retries: -1
   chart:
     spec:
       chart: cert-manager
@@ -12,10 +19,6 @@ spec:
         kind: HelmRepository
         name: cert-manager-repo
       interval: 12h
-  install:
-    crds: CreateReplace
-  upgrade:
-    crds: CreateReplace
   # https://github.com/cert-manager/cert-manager/blob/master/deploy/charts/cert-manager/values.yaml
   values:
     installCRDs: true

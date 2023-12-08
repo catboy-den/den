@@ -20,7 +20,7 @@ spec:
   # https://github.com/bank-vaults/vault-helm-chart/blob/main/vault/values.yaml
   values:
     unsealer:
-      args: ["--mode", "k8s", "--k8s-secret-namespace", "system", "--k8s-secret-name", "bank-vaults"]
+      args: ["--mode", "k8s", "--k8s-secret-namespace", "vault", "--k8s-secret-name", "bank-vaults"]
       metrics:
         enabled: true
         serviceMonitor:

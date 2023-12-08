@@ -41,6 +41,10 @@ spec:
             bound_service_account_names: "*"
             bound_service_account_namespaces: "*"
             policies: allow_secrets
+          - name: vault
+            bound_service_account_names: "*"
+            bound_service_account_namespaces: "*"
+            policies: allow_secrets
           - name: flux-system
             bound_service_account_names: "*"
             bound_service_account_namespaces: "*"

@@ -28,6 +28,7 @@ spec:
       metrics:
         serviceMonitor:
           enabled: true
+    users: []
     oidc:
       enabled: true
       configUrl: "https://identity-provider-url/.well-known/openid-configuration"

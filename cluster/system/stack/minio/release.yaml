@@ -29,12 +29,10 @@ spec:
         cert-manager.io/cluster-issuer: letsencrypt-issuer
         traefik.ingress.kubernetes.io/router.entrypoints: websecure
         traefik.ingress.kubernetes.io/router.tls: "true"
+      path: /
       hosts:
-      - host: minio.catboy.rest
-        paths:
-        - path: /
-          pathType: Prefix
+      - minio.catboy.rest
       tls:
-      - hosts:
+      - secretName: minio-cert
+        hosts:
         - minio.catboy.rest
-        secretName: minio-cert

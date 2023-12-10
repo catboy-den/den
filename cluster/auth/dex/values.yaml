@@ -44,6 +44,11 @@ stringData:
             - "https://grafana.catboy.rest/login/generic_oauth"
           name: "Grafana"
           secret: ${vault:secret/data/dex-staticClient-secret#secret}
+        - id: minio
+          redirectURIs:
+          - "https://minio.catboy.rest/oauth_callback"
+          name: "Minio"
+          secret: ${vault:secret/data/dex-staticClient-secret#secret}
     ingress:
       enabled: true
       annotations:

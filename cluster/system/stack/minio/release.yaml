@@ -33,13 +33,12 @@ spec:
       enabled: true
       configUrl: "https://dex.catboy.rest"
       clientId: "minio"
-      clientSecret: "minio"
       # Provide existing client secret from the Kubernetes Secret resource, existing secret will have priority over `clientSecret`
-      existingClientSecretName: ""
-      existingClientSecretKey: ""
+      existingClientSecretName: "minio-oidc-auth"
+      existingClientSecretKey: "clientSecret"
       claimName: "consoleAdmin"
       scopes: "openid,profile,email"
-      redirectUri: "https://console-endpoint-url/oauth_callback"
+      redirectUri: "https://minio.catboy.rest/oauth_callback"
       # Can leave empty
       claimPrefix: ""
       comment: "Login with GitHub"

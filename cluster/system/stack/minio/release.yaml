@@ -41,8 +41,6 @@ spec:
       claimName: "name"
       scopes: "openid,profile,email"
       redirectUri: "https://minio.catboy.rest/oauth_callback"
-      # Can leave empty
-      claimPrefix: ""
       comment: "Login with GitHub"
     consoleIngress:
       enabled: true

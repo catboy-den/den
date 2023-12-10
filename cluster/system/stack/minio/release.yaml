@@ -30,7 +30,7 @@ spec:
           enabled: true
     enviroment:
       MINIO_IDENTITY_OPENID_DISPLAY_NAME: GitHub
-      MINIO_BROWSER_REDIRECT_URL: "https://minio.catboy.rest/oauth_callback"
+      MINIO_BROWSER_REDIRECT_URL: "https://minio.catboy.rest"
     oidc:
       enabled: true
       configUrl: "https://dex.catboy.rest/.well-known/openid-configuration"

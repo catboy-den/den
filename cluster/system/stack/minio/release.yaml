@@ -31,18 +31,18 @@ spec:
     users: []
     oidc:
       enabled: true
-      configUrl: "https://identity-provider-url/.well-known/openid-configuration"
+      configUrl: "https://dex.catboy.rest"
       clientId: "minio"
-      clientSecret: ""
+      clientSecret: "minio"
       # Provide existing client secret from the Kubernetes Secret resource, existing secret will have priority over `clientSecret`
       existingClientSecretName: ""
       existingClientSecretKey: ""
-      claimName: "policy"
+      claimName: "consoleAdmin"
       scopes: "openid,profile,email"
       redirectUri: "https://console-endpoint-url/oauth_callback"
       # Can leave empty
       claimPrefix: ""
-      comment: ""
+      comment: "Login with GitHub"
     consoleIngress:
       enabled: true
       annotations:

@@ -6,12 +6,12 @@ spec:
   interval: 1h
   chart:
     spec:
-      version: "12.x"
+      version: "5.x"
       chart: minio
       sourceRef:
         kind: HelmRepository
-        name: bitnami-repo
-      interval: 60m
+        name: minio-repo
+      interval: 1h
   install:
     crds: CreateReplace
   upgrade:

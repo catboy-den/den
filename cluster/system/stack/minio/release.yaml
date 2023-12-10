@@ -16,3 +16,25 @@ spec:
     crds: CreateReplace
   upgrade:
     crds: CreateReplace
+  # https://github.com/minio/minio/blob/master/helm/minio/values.yaml
+  values:
+  persistence:
+    enabled: false
+    metrics:
+      serviceMonitor:
+        enabled: true
+    ingress:
+      enabled: true
+      annotations:
+        cert-manager.io/cluster-issuer: letsencrypt-issuer
+        traefik.ingress.kubernetes.io/router.entrypoints: websecure
+        traefik.ingress.kubernetes.io/router.tls: "true"
+      hosts:
+      - host: minio.catboy.rest
+        paths:
+        - path: /
+          pathType: Prefix
+      tls:
+      - hosts:
+        - minio.catboy.rest
+        secretName: minio-cert

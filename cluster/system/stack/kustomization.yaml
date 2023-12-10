@@ -1,10 +1,9 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 metadata:
-  name: weave-gitops
+  name: system-stack
+namespace: kube-system
 
 resources:
-- oidc-auth.yaml
-- roles.yaml
-- repository.yaml
-- release.yaml
+- kube-prometheus-stack
+- weave-gitops

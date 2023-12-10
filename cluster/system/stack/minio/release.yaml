@@ -31,7 +31,7 @@ spec:
     users: []
     oidc:
       enabled: true
-      configUrl: "https://dex.catboy.rest"
+      configUrl: "https://dex.catboy.rest/.well-known/openid-configuration"
       clientId: "minio"
       # Provide existing client secret from the Kubernetes Secret resource, existing secret will have priority over `clientSecret`
       existingClientSecretName: "minio-oidc-auth"

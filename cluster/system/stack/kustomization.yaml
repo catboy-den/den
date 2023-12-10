@@ -7,3 +7,4 @@ namespace: kube-system
 resources:
 - kube-prometheus-stack
 - weave-gitops
+- minio

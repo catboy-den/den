@@ -38,12 +38,12 @@ stringData:
           redirectURIs:
             - "https://weave.catboy.rest/oauth2/callback"
           name: "Weave Gitops"
-          secret: ${vault:secret/data/dex-staticClient-secret#secret}
+          secret: vault:secret/data/dex-staticClient-secret#secret
         - id: grafana
           redirectURIs:
             - "https://grafana.catboy.rest/login/generic_oauth"
           name: "Grafana"
-          secret: ${vault:secret/data/dex-staticClient-secret#secret}
+          secret: vault:secret/data/dex-staticClient-secret#secret
     ingress:
       enabled: true
       annotations:

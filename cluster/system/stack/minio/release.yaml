@@ -29,7 +29,7 @@ spec:
         serviceMonitor:
           enabled: true
     environment:
-      MINIO_IDENTITY_OPENID_DISPLAY_NAME: GitHub
+      MINIO_IDENTITY_OPENID_DISPLAY_NAME: Login with GitHub
       MINIO_BROWSER_REDIRECT_URL: "https://minio.catboy.rest"
     oidc:
       enabled: true
@@ -38,10 +38,9 @@ spec:
       # Provide existing client secret from the Kubernetes Secret resource, existing secret will have priority over `clientSecret`
       existingClientSecretName: "minio-oidc-auth"
       existingClientSecretKey: "clientSecret"
-      claimName: "name"
+      claimName: "groups"
       scopes: "openid,profile,email,groups"
       redirectUri: "https://minio.catboy.rest/oauth_callback"
-      comment: "Login with GitHub"
     consoleIngress:
       enabled: true
       annotations:

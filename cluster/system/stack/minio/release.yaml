@@ -58,8 +58,8 @@ spec:
     - name: catboy-den:cluster-admin
       statements:
       - effect:
-        - resources:
-          - 'arn:aws:s3:::*'
-          actions:
-          - 's3:GetBucketLocation'
-          - 's3:GetObject'
+        resources:
+        - 'arn:aws:s3:::*'
+        actions:
+        - 's3:GetBucketLocation'
+        - 's3:GetObject'

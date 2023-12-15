@@ -25,9 +25,9 @@ spec:
     mode: standalone
     persistence:
       enabled: false
-      metrics:
-        serviceMonitor:
-          enabled: true
+    metrics:
+      serviceMonitor:
+        enabled: true
     environment:
       MINIO_IDENTITY_OPENID_DISPLAY_NAME: Login with GitHub
       MINIO_BROWSER_REDIRECT_URL: "https://minio.catboy.rest"

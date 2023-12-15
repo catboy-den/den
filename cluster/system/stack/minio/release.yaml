@@ -38,7 +38,7 @@ spec:
       # Provide existing client secret from the Kubernetes Secret resource, existing secret will have priority over `clientSecret`
       existingClientSecretName: "minio-oidc-auth"
       existingClientSecretKey: "clientSecret"
-      claimName: "groups"
+      claimName: "policy"
       scopes: "openid,profile,email,groups"
       redirectUri: "https://minio.catboy.rest/oauth_callback"
     consoleIngress:
@@ -62,5 +62,14 @@ spec:
         actions:
         - 's3:GetBucketLocation'
         - 's3:GetObject'
+        conditions:
+        - StringLike: '"jwt:groups": "*cluster-user*"'
+    - name: cluster-admin
+      statements:
+      - resources:
+        - 'arn:aws:s3:::*'
+        actions:
+        - 's3:*'
+        - 'admin:*'
         conditions:
         - StringLike: '"jwt:groups": "*cluster-admin*"'

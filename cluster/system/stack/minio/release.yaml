@@ -70,3 +70,7 @@ spec:
         - 'arn:aws:s3:::*'
         actions:
         - 'admin:*'
+      - resources:
+        - 'arn:aws:s3:::*'
+        actions:
+        - 's3:*'

@@ -18,10 +18,10 @@ spec:
     crds: CreateReplace
   # https://github.com/minio/minio/blob/master/helm/minio/values.yaml
   values:
-    replicas: 1
+    replicas: 2
     resources:
       requests:
-        memory: 4Gi
+        memory: 2Gi
     mode: standalone
     persistence:
       enabled: false

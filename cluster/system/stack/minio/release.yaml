@@ -64,12 +64,3 @@ spec:
         - 's3:GetObject'
         conditions:
         - StringLike: '"jwt:groups": "*cluster-user*"'
-    - name: cluster-admin
-      statements:
-      - resources:
-        - 'arn:aws:s3:::*'
-        actions:
-        - 's3:*'
-        - 'admin:*'
-        conditions:
-        - StringLike: '"jwt:groups": "*cluster-admin*"'

@@ -54,3 +54,13 @@ spec:
       - secretName: minio-cert
         hosts:
         - minio.catboy.rest
+    policies:
+    - name: cluster-admin
+      statements:
+      - resources:
+        - '*'
+        actions:
+        - 's3:GetBucketLocation'
+        - 's3:GetObject'
+        conditions:
+        - StringLike: '"jwt:groups": "*cluster-admin*"'

@@ -55,7 +55,7 @@ spec:
         hosts:
         - minio.catboy.rest
     policies:
-    - name: catboy-den:cluster-admin
+    - name: catboy-den:cluster-user
       statements:
       - effect:
         resources:
@@ -63,3 +63,11 @@ spec:
         actions:
         - 's3:GetBucketLocation'
         - 's3:GetObject'
+    - name: catboy-den:cluster-admin
+      statements:
+      - effect:
+        resources:
+        - 'arn:aws:s3:::*'
+        actions:
+        - 's3:*'
+        - 'admin:*'

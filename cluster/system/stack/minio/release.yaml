@@ -18,7 +18,9 @@ spec:
     crds: CreateReplace
   # https://github.com/minio/minio/blob/master/helm/minio/values.yaml
   values:
-    replicas: 4
+    replicas: 1
+    additionalLabels:
+      monitoring: true
     resources:
       requests:
         memory: 4Gi
@@ -74,6 +76,5 @@ spec:
     metrics:
       serviceMonitor:
         enabled: true
-        # scrape each node/pod individually for additional metrics
         includeNode: true
         interval: 15s

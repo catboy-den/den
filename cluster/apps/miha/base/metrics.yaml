@@ -7,9 +7,6 @@ spec:
     matchLabels:
       app: miha
       detail: bot
-  namespaceSelector:
-    matchNames:
-    - miha
   endpoints:
   - targetPort: 9121
     path: /metrics

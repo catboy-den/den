@@ -25,9 +25,6 @@ spec:
     mode: standalone
     persistence:
       enabled: false
-    metrics:
-      serviceMonitor:
-        enabled: true
     environment:
       MINIO_IDENTITY_OPENID_DISPLAY_NAME: Login with GitHub
       MINIO_BROWSER_REDIRECT_URL: "https://minio.catboy.rest"
@@ -74,3 +71,9 @@ spec:
         - 'arn:aws:s3:::*'
         actions:
         - 's3:*'
+    metrics:
+      serviceMonitor:
+        enabled: true
+        # scrape each node/pod individually for additional metrics
+        includeNode: true
+        interval: 15s

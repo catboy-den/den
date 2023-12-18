@@ -7,7 +7,7 @@ spec:
     spec:
       containers:
       - name: miha
-        image: ghcr.io/catboy-den/miha:cutting-edge-catch-schedule-service-exceptions-edb2868-1702858625 # {"$imagepolicy": "flux-system:miha-edge"}
+        image: ghcr.io/catboy-den/miha:edge-main-ec305c3-1702858663 # {"$imagepolicy": "flux-system:miha-edge"}
         env:
         - name: ASPNETCORE_ENVIRONMENT
           value: Development

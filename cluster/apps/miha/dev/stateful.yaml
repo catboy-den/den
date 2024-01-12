@@ -7,7 +7,7 @@ spec:
     spec:
       containers:
       - name: miha
-        image: ghcr.io/catboy-den/miha:edge-main-e18667b-1704902960 # {"$imagepolicy": "flux-system:miha-edge"}
+        image: ghcr.io/catboy-den/miha:edge-main-70808a8-1705021508 # {"$imagepolicy": "flux-system:miha-edge"}
         env:
         - name: ASPNETCORE_ENVIRONMENT
           value: Development

@@ -1,0 +1,23 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: owncast
+spec:
+  interval: 30m
+  install:
+    crds: CreateReplace
+  upgrade:
+    crds: CreateReplace
+    remediation:
+      # Number of retries that should be attempted on failures before bailing, a negative integer equals to unlimited retries
+      retries: -1
+  chart:
+    spec:
+      chart: owncast
+      version: "4.x"
+      sourceRef:
+        kind: HelmRepository
+        name: truecharts-repo
+      interval: 12h
+  # https://github.com/truecharts/charts/blob/master/charts/stable/owncast/values.yaml
+  values:

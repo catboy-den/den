@@ -8,3 +8,4 @@ resources:
 - namespace.yaml
 - miha/dev
 - miha/prod
+- nginx-rtmp

@@ -25,7 +25,7 @@ spec:
             memory: 100Mi
         volumeMounts:
         - name: nginx-rtmp-conf-volume
-          mountPath: /etc/nginx/nginx.conf
+          mountPath: /etc/nginx
           subPath: nginx.conf
         ports:
         - name: rtmp-port

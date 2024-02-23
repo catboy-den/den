@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-rtmp
+spec:
+  selector:
+    matchLabels:
+      app: nginx-rtmp
+  replicas: 1
+  template:
+    spec:
+      containers:
+      - name: nginx-rtmp
+        image: tiangolo/nginx-rtmp:latest
+        imagePullPolicy: Always
+        resources:
+          requests:
+            cpu: 100m
+            memory: 100Mi
+          limits:
+            cpu: 100m
+            memory: 100Mi
+        ports:
+        - name: rtmp-port
+          containerPort: 1935
+        - name: http-port
+          containerPort: 80
+      restartPolicy: Always

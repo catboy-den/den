@@ -42,7 +42,7 @@ provider "flux" {
     config_path = "~/.kube/config"
   }
   git = {
-    url = "ssh://git@github.com/${github_repository.this.full_name}.git"
+    url = "ssh://git@github.com/${github_repository.repo.full_name}.git"
     ssh = {
       username    = "git"
       private_key = tls_private_key.main.private_key_pem
@@ -50,22 +50,22 @@ provider "flux" {
   }
 }
 
-resource "github_repository" "this" {
+resource "github_repository" "repo" {
   name         = var.flux_repository_name
   visibility   = var.flux_repository_visibility
   description  = var.flux_repository_description
   homepage_url = var.flux_repository_homepage
-  auto_init    = true
+  auto_init    = false
 }
 
-resource "github_branch_default" "this" {
-  repository = github_repository.this.name
+resource "github_branch_default" "branch" {
+  repository = github_repository.repo.name
   branch     = var.flux_repository_branch
 }
 
 resource "github_repository_deploy_key" "this" {
   title      = "flux-cluster"
-  repository = github_repository.this.name
+  repository = github_repository.repo.name
   key        = tls_private_key.main.public_key_openssh
   read_only  = false
 }

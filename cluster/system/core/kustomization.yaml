@@ -7,7 +7,6 @@ namespace: kube-system
 resources:
 - cert-manager
 - crds
-- ingress-nginx
 - kubed
 - sealed-secrets
 - tf-controller

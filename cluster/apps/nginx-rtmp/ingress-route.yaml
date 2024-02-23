@@ -6,7 +6,7 @@ spec:
   entryPoints:
   - rtmp
   routes:
-  - match: Host(`stream.catboy.rest`) && Path(`/live`)
+  - match: HostSNI(`stream.catboy.rest`)
     services:
     - name: nginx-rtmp
       port: 1935

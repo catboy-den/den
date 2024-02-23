@@ -3,7 +3,6 @@ kind: Kustomization
 metadata:
   name: miha-dev
 
-namespace: miha
 nameSuffix: -dev
 
 resources:

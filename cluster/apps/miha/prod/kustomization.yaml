@@ -3,8 +3,6 @@ kind: Kustomization
 metadata:
   name: miha
 
-namespace: miha
-
 resources:
 - ../base
 - secret-discord.yaml

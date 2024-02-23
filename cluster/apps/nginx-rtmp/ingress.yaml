@@ -7,14 +7,7 @@ spec:
   - host: stream.catboy.rest
     http:
       paths:
-      - path: /live
-        pathType: Prefix
-        backend:
-          service:
-            name: nginx-rtmp
-            port:
-              number: 1935
-      - path: /
+      - path: /hls
         pathType: Prefix
         backend:
           service:

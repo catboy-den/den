@@ -10,7 +10,7 @@ spec:
     app: nginx-rtmp
   ports:
   - name: nginx-rtmp-port
-    port: 1935
+    port: 8935
     protocol: TCP
     targetPort: rtmp-port
   - name: nginx-http-port

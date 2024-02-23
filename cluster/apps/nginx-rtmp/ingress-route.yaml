@@ -9,4 +9,4 @@ spec:
   - match: HostSNI(`stream.catboy.rest`)
     services:
     - name: nginx-rtmp
-      port: 1935
+      port: 8935

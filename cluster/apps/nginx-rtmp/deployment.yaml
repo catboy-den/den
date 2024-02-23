@@ -24,8 +24,8 @@ spec:
             cpu: 100m
             memory: 100Mi
         volumeMounts:
-        - name: config-volume
-          mountPath: /etc/nginx/test.conf
+        - name: nginx-conf
+          mountPath: /etc/nginx/nginx.conf
           subPath: nginx.conf
         ports:
         - name: rtmp-port
@@ -34,6 +34,6 @@ spec:
           containerPort: 80
       restartPolicy: Always
       volumes:
-      - name: config-volume
+      - name: nginx-conf
         configMap:
           name: nginx-rtmp-conf

@@ -3,7 +3,7 @@ apiVersion: v1
 metadata:
   name: nginx-rtmp-conf
 data:
-  nginxconf: |-
+  nginx.conf: |-
     rtmp {
       server {
         listen 1935; # this is the port, you may change it if necessary.

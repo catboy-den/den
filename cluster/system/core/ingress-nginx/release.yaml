@@ -25,3 +25,6 @@ spec:
       enabled: true
     serviceMonitor:
       enabled: true
+    controller:
+      ingressClassResource:
+        default: false

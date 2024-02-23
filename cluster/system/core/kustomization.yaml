@@ -10,3 +10,4 @@ resources:
 - kubed
 - sealed-secrets
 - tf-controller
+- traefik

@@ -4,4 +4,5 @@ metadata:
   name: truecharts-repo
 spec:
   interval: 24h
-  url: https://charts.truecharts.org
+  type: oci
+  url: oci://tccr.io/truecharts

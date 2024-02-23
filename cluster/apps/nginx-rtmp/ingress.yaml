@@ -1,8 +1,7 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: IngressName
-  namespace: default
+  name: nginx-rtmp
 spec:
   rules:
   - host: stream.catboy.rest

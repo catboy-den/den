@@ -14,7 +14,7 @@ spec:
   chart:
     spec:
       chart: owncast
-      version: "4.x"
+      version: "12.x"
       sourceRef:
         kind: HelmRepository
         name: truecharts-repo

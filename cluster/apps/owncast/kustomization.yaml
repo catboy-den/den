@@ -6,4 +6,4 @@ metadata:
 resources:
 - repository.yaml
 - release.yaml
-- kustomization.yaml
+- ingress.yaml

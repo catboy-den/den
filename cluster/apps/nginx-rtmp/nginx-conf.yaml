@@ -34,18 +34,20 @@ data:
       }
     }
 
-    server {
-      listen 80;
+    http {
+      server {
+        listen 80;
 
-      # setting up any HTTP configuration you'd like is ok, the only important part is below.
-      
-      location /hls {
-        # Serve HLS fragments
-        types {
-            application/vnd.apple.mpegurl m3u8;
-            video/mp2t ts;
+        # setting up any HTTP configuration you'd like is ok, the only important part is below.
+        
+        location /hls {
+          # Serve HLS fragments
+          types {
+              application/vnd.apple.mpegurl m3u8;
+              video/mp2t ts;
+          }
+          root /tmp;
+          add_header Cache-Control no-cache;
         }
-        root /tmp;
-        add_header Cache-Control no-cache;
       }
     }

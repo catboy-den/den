@@ -21,3 +21,10 @@ spec:
       interval: 12h
   # https://github.com/traefik/traefik-helm-chart/blob/master/traefik/values.yaml
   values:
+    ports:
+      rtmp:
+        port: 1935
+        expose: true
+        exposedPort: 1935
+        protocol: TCP
+        exposeInternal: false

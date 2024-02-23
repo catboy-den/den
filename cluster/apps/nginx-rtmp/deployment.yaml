@@ -27,5 +27,5 @@ spec:
         - name: rtmp-port
           containerPort: 1935
         - name: http-port
-          containerPort: 80
+          containerPort: 8080
       restartPolicy: Always

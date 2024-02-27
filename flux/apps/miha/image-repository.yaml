@@ -4,5 +4,5 @@ metadata:
   name: miha-bot
   namespace: flux-system
 spec:
-  image: ghcr.io/catboy-den/miha
+  image: ghcr.io/twinki14/miha
   interval: 10s

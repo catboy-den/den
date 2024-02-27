@@ -7,7 +7,7 @@ spec:
     spec:
       containers:
       - name: miha
-        image: ghcr.io/catboy-den/miha:0.2.5 # {"$imagepolicy": "flux-system:miha-latest"}
+        image: ghcr.io/twinki14/miha:latest # {"$imagepolicy": "flux-system:miha-latest"}
         env:
         - name: ASPNETCORE_ENVIRONMENT
           value: Production

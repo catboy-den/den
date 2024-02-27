@@ -79,7 +79,7 @@ spec:
         ports:
         - containerPort: 9121
       - name: miha
-        image: ghcr.io/catboy-den/miha:latest
+        image: ghcr.io/twinki14/miha:latest
         resources:
           requests:
             cpu: 250m

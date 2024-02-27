@@ -9,5 +9,5 @@ resources:
 - crds
 - kubed
 - sealed-secrets
-- tf-controller
+- tofu-controller
 - traefik

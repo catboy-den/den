@@ -18,7 +18,7 @@ spec:
     crds: Create
   upgrade:
     crds: CreateReplace
-  # https://github.com/weaveworks/tf-controller/blob/main/charts/tf-controller/values.yaml
+  # https://github.com/flux-iac/tofu-controller/blob/main/charts/tf-controller/values.yaml
   values:
     installCRDs: true
     metrics:
